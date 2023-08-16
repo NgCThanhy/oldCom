@@ -1,0 +1,207 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+}
+
+.main {
+    line-height: 1.5;
+}
+
+:root {
+    --backGrounfColor: black;
+}
+
+
+
+.Header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    background-color: var(--backGrounfColor);
+    color: #fff;
+    width: 100%;
+    height: 50px;
+    
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.Header__NavBar {
+    display: flex;
+}
+
+.Header__NavBar li {
+    list-style: none;
+}
+
+.Header__NavBar li a {
+    padding: 0 24px;
+    line-height: 50px;
+}
+
+.Header__NavBar li:hover a{
+    background-color: #b1acac;
+    color: #000;
+}
+
+.Header__Search {
+    margin: auto;
+}
+
+.Header__Search input {
+    border-style: groove;
+    width: 300px;
+} 
+
+.Search__logo {
+    float: right;
+    padding: 1px 5px;
+    cursor: pointer;
+} 
+
+.Search__logo i {
+    font-size: 15px;
+}
+
+
+.Header__Logo {
+    display: flex;
+    margin-right: 24px;
+}
+
+.Header__Logo i {
+    font-size: 24px;
+    line-height: 50px;
+    margin: 0 24px;
+}
+
+.Header__Logo img {
+    height: 50px;
+}
+/*//////////////////////////////////////////*/
+
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.banner {
+    position: relative;
+
+    width: 100%;
+    height: 493px;
+    background:
+        black
+        url(https://www.3m.com.au/wps/wcm/connect/80c4d83a-76a5-4a24-9af7-adb21ca2b545/1/SS590_Blog-Banner_2020_81.jpg?MOD=AJPERES)
+        top center
+        /100%
+        no-repeat
+     ;
+}
+
+.banner__title {
+    position: absolute;
+}
+
+.banner__subTitle {
+    position: absolute;
+    text-align: center;
+    top: 45px;
+    left: 10px;
+}
+
+.slider {
+    display: flex;
+    justify-content: space-around;
+    padding: 64px 0;
+    background-color: #000;
+}
+
+.Slider__Station {
+    background-color: rgb(241, 238, 38);
+    width: 350px ;
+    padding: 16px ;
+    border-radius: 5px;
+}
+
+
+.Station-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Station__location {
+    padding: 10px 0;
+}
+
+.Station__location a {
+    line-height: 50px;
+    font-size: 24px;
+    color: black;
+    font-weight: 600;
+}
+
+.Station__location i {
+    font-size: 50px;
+}
+
+.Station__location:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.Temp-Humi {
+    
+}
+
+.Total-Counts {
+    
+}
+
+.Cps-uSv {
+    
+}
+/* ////////////////////////////////////////////////////////////////////// */
+.Footer {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: rgb(37, 37, 37);
+    color: #fff;
+    
+    padding: 10px 24px;
+}
+
+.Footer__Content {
+    font-size: 10px;
+    line-height: 21px;
+    
+}
+
+.Footer__logoContact {
+    line-height: 42px;
+}
+
+.Footer__logoContact i {
+    padding: 0 4px;
+    cursor: pointer;
+}

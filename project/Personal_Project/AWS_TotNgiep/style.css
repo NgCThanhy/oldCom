@@ -1,0 +1,663 @@
+/* reset css nào */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* ///////////////////////////////////// */
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    border: none; 
+    outline: none;
+    text-decoration: none; 
+    color: #fff;
+}
+
+
+.btn:hover {
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+
+.BtnLarger:hover {
+    font-size: larger   ;
+}
+
+.row {
+    display: flex;
+}
+
+.col-1 {
+    flex-direction: column;
+}
+
+.col-2 {
+    justify-content: space-between;
+}
+
+.col-3 {
+    justify-content: space-around;
+}
+
+.center {
+    margin: auto;
+}
+
+.h-align {
+    justify-content: center;
+}
+
+.v-align {
+    align-items: center;
+}
+
+.sh-align {
+    justify-self: center;
+}
+
+.sv-align {
+    align-self: center;
+}
+
+.upWord {
+    text-transform: uppercase;
+}
+
+.noneDis {
+    display: none !important;
+}
+
+/* 2272FF */
+:root {
+    --mainBackGroundColor: #e7e7e7;
+    --sideBarBackGround: linear-gradient(0, rgb(24, 65, 88), rgb(0, 0, 0));
+    --invSideBarBackGround: rgb(24, 65, 88);
+    --headerBackGround: #fff;
+    --stationBackGrounfColor: #fff;
+    --stationBtnBackGrounfColor: #135299;
+    --modalBackGrounfColor: rgb(24, 65, 88);
+    
+
+    --headerHeight: 4em;
+    
+    --headerBtnHoverBackGrounfColor: #b1acac;
+    --headerBtnHoverColor: #5852b4;
+    
+    --sliderBackGrounfColor: #aca1a1;
+
+    --footerBackGroundColor: #2e2d2d;
+
+}
+
+
+
+/* //////////////////////////////////////////////// */
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-content h1 {
+    color: #333;
+}
+
+/* //////////////////////////////////////////////// */
+
+.main {
+    margin: 0 1vw;
+    width: 98vw;
+    height: 100vh;
+    background-color: var(--mainBackGroundColor);
+}
+
+.sideBar {
+    background: var(--sideBarBackGround);
+    width: 23%;
+    min-width: 200px;
+    height: 100vh;
+    padding: 20px;
+    /* box-shadow: -12px 5px 5px rgb(24, 65, 88); */
+}
+.logo {
+    background-image: 
+    url(./logoRewes.png)
+    ;
+    background-size: 100%;
+    width: 80%;
+    height: 89px;
+    background-repeat: no-repeat; 
+}
+
+.sideBarBtn {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.footer {
+    font-size: 10px;
+}
+
+.community {
+    font-size: 30px;
+    padding: 0 10%;
+}
+
+.container {
+    width: 78%;
+    height: 100vh;
+}
+
+.header {
+    background-color: var(--headerBackGround);
+    height: 15%;
+    border-bottom: #000 solid  1px;
+    box-shadow: 10px 5px 5px rgb(155, 154, 154);
+    justify-content: flex-end;
+}
+.navbar_name {
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(24, 65, 88, 0.5);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.line {
+    width: 2px;
+    height: 25px;
+    background-color: #000;
+}
+.accout {
+    width: 15%;
+    height: 100%;
+}
+
+.accoutBtn i {
+    margin-right: 5px;
+}
+
+.accoutBtn:hover {
+    cursor: pointer;
+}
+
+.reloadBtn{
+    width: 4%;
+}
+
+.reloadBtn:hover {
+    cursor: pointer;
+}
+
+/* /////////// */
+.content__home {
+    height: 85%;
+    /* box-shadow: 10px 5px 5px rgb(155, 154, 154); */
+}
+
+.content__home img{
+    margin-top: 5%  ;
+}
+
+.text {
+    padding: 10px;
+    font-style: italic;
+    font-weight:600;
+}
+/* /////////// */
+
+.content__station {
+    height: 85%;
+    box-shadow: 10px 5px 5px rgb(155, 154, 154);
+}
+
+.StationBtn {
+    width: 100%;
+    height: 20%;
+    font-size: larger;
+    padding: 0 5%;
+}
+
+.StationBtn button {
+    background-color:  var(--stationBtnBackGrounfColor);
+    margin-right: 10px;
+    border-radius: 25px;
+    height: 45px;
+    width: 25%;
+    min-width: 134px;
+
+    text-align: center;
+}
+
+.Station {
+    background-color: var(--stationBackGrounfColor);
+    width: 90% ;
+    height: 70%;
+    padding: 1.6em ;
+    border-radius: 10px;
+}
+
+.Station__location  {
+    font-size: 20px;
+}
+
+.dayTimeBlock {
+    margin-left: 10px;
+}
+
+.Station__status {
+    margin: 2em 0;
+    list-style: none;
+    font-size: 20px;
+    height: 55%;
+}
+
+.Station__btn button {
+    background-color: var(--stationBtnBackGrounfColor);
+    padding: 1em 0;
+    border-radius: 10px;
+
+    min-width: 10em;
+
+    text-align: center;
+}
+
+.Station__btn button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.status_section { 
+    width: 45%;
+    background-color: var(--stationBtnBackGrounfColor);
+    padding: 10px 10px;
+    border-radius: 25px;
+    color: #fff;
+
+}
+
+/* /////////// */
+
+.content__table {
+    height: 85%;
+    background-color: #135299;
+    box-shadow: 10px 5px 5px rgb(155, 154, 154);
+}
+
+h2 {
+    padding: 10px 0;
+}
+
+table {
+    height: 85%;
+    width: 100%;
+
+    border-collapse: collapse;
+    table-layout: fixed;
+    
+    margin-top: 10px;
+}
+
+tbody {
+    text-align: center;
+}
+
+tr {
+    width: 100%;
+}
+
+th, td {
+    border: 5px solid #ccc;
+}
+
+th {
+    height: 40px;
+}
+
+/* /////////// */
+
+.content__graph {
+    height: 85%;
+    box-shadow: 10px 5px 5px rgb(155, 154, 154);
+}
+
+.compositeGraph {
+    background-color: var(--headerBackGround);
+    width: 100%;
+    height: 80%;
+}
+
+.graph {
+    height: 100%;
+    width: 100%;
+}
+
+
+/* /////////// */
+
+.Modal {    /* tạo lớp phủ mờ mờ (overlay) */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.submitModal-body {
+    position: relative;
+    width: 40%;
+    min-height: 100px;
+    background-color: #ece9e0ee;
+    margin: auto;
+
+    animation: ModalFloatIn ease .4s;
+}
+
+.formModal {
+    min-width: 24px;
+}
+
+.Modal-form__label {
+    font-size: 16px;
+    flex: 0 0 auto;
+    margin-right: 8px;
+}
+
+.Modal-form__input {
+    flex: 1;
+}
+
+.submit-form__name {
+    margin-bottom: 10px;
+    flex: 1;
+}
+
+.submit-form__api {
+    margin-bottom: 10px;
+
+}
+
+
+.Modal-form__btn {
+    background-color: var(--stationBtnBackGrounfColor);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.Modal-form__btn:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+/* /////////////////////////// */
+
+.chartModal-body {
+    position: relative;
+    width: 90%;
+    min-height: 200px;
+    background-color: #ece9e0ee;
+    margin: auto;
+
+    animation: ModalFloatIn ease .4s;
+}
+
+.chartModal__Close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.Modal__Header {
+    height: 50px;
+    background-color: var(--modalBackGrounfColor);
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    color: #fff;
+
+    display: flex;
+}
+
+.Modal__Header i{
+    margin-right: 16px;
+}
+
+.chartModal__Container {
+    padding: 16px;
+}
+
+.chart {
+    width: 50%;
+    /* height: 0%; */
+}
+
+.chartModal__Footer {
+    padding:0 6px 6px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 15px;
+}
+/* /////////////////////////// */
+.registerBtn {
+    color: blue;
+}
+
+.registerBtn:hover {
+    background-color: var(--mainBackGroundColor);
+}
+
+@keyframes ModalFloatIn {
+    from{
+        transform: translateY(-130px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes sideBarFloatIn {
+    from{
+        transform: translateX(-130px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes sideBarFloatIn {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-130px);
+    }
+}
+
+
+.positionFixed {
+    position: fixed;
+}
+
+.mobileSideBar {
+    display: none;
+}
+
+.mobile_contentBtn {
+    display: none;
+}
+
+.mobileFooter {
+    display: none;
+}
+
+/* /////////////////////////////////////////// */
+
+@media only screen and (max-width: 46.1875em) {
+
+    .main {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--mainBackGroundColor);
+    }
+
+    .container {
+        width:100%;
+        height: 100%;
+    }
+
+    .header {
+        /* width: 100%; */
+        height: 15%;
+        box-shadow: none;
+    }
+
+    .content__home img{
+        margin: 25% 0;
+        width: 90%;
+    }
+
+    .text {
+        margin: 20px 0;
+    }
+
+    .sideBar {
+        display: none;
+    }
+
+    .mobileSideBar {
+        display: flex;
+        background: var(--sideBarBackGround);
+        width: 20%;
+        height: 100%;
+    }
+
+    .mobileLogo img{
+        width: 100%;
+        height: 56%;
+    }
+
+    .mobile_contentBtn {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: var(--invSideBarBackGround);
+    }
+
+    .mobile_contentBtn li{
+        padding: 10px;
+    }
+
+    .js-userName {
+        display: none;
+    }
+    
+    .line {
+        display: none;
+    }
+
+    .reloadBtn {
+        display: none;
+    }
+
+    .accout {
+        width: 5%;
+        height: 100%;
+        font-size: 20px;
+        margin-right: 5px;
+    }
+
+    .mobileFooter {
+        display: flex;
+        justify-content: space-between;
+        justify-content: center;    
+    }
+
+    .community {
+        font-size: 25px;
+        padding: 0;
+    }
+
+    .community i {
+        padding: 15px 2px 0 2px;
+    }
+    
+    .submitModal-body {
+        width: 60%;
+    }
+
+    .submit-form__name, .submit-form__api {
+        margin-bottom: 10px;
+        flex-direction: column;
+    }
+
+    .StationBtn {
+        margin-top: 2px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .Station__status {
+        justify-content: unset;
+    }
+
+    .mobile_status_section {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .status_section {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .chartModal__ContainerMobile {
+        padding: 0px;
+        flex-direction: column;
+        width: 370px;
+        height: 480px;
+    }
+
+    .chart {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 23.5em){
+    .main {
+        height: 850px;
+    }
+    .Station__status {
+        margin: 2em 0;
+        list-style: none;
+        font-size: 16px;
+        height: 55%;
+    }
+}

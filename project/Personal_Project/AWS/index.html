@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CẢNH BÁO AN TOÀN PHÓNG XẠ</title>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    </head>
+        <link rel="stylesheet" href="./style.css">
+
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+    </head>
+
+    <body>
+
+        <div class="Main">
+
+            <div class="Header row col-2">
+                <ul class="Header__Navbar row">
+                    <li><a class="btn Navbar-btn" href="#">Home</a></li>
+                    <li><a class="btn Navbar-btn" href="#Station-roll">station</a></li>
+                </ul>
+
+                <div class="Header__Logo row">
+                    <img src="/Logo_radiation.png" alt="">
+                </div>
+                
+            </div>
+
+            <!-- <div class="banner">
+                <h1 class="banner__title">giới thiệu</h1>
+                <h2 class="banner__subTitle">HỆ THỐNG CẢNH BÁO <br/> AN TOÀN PHÓNG XẠ THỜI GIAN THỰC</h2>
+            </div> -->
+
+            
+            <div id="Station-roll" class="slider js-slider row col-1 ">
+                
+                <div class="selectStation js-selectStation">
+                    <button class="js-addStationBtn btn">thêm trạm</button>
+                    <!-- <button class="js-stationButton btn">Tram1</button> -->
+                </div>
+
+                <!-- <div class="Station js-Station center">
+                    <div class="Station__location">
+                        <i class="fa-solid fa-house-flag"></i>
+                        <a class="btn" href="#">trạm 1</a>
+                    </div>
+
+                    <ul class="Station__status">
+                        <li class="js-temperature-1">nhiệt độ: </li>
+                        <li class="js-humidity-1">độ ẩm: </li>
+                        <li class="js-Cps-1">số đếm trên giây: </li>
+                        <li class="js-uSv-1">suất liều hấp thụ: </li>
+                        <li class="js-time-1">thời gian: </li>
+                    </ul>
+
+                    <div class="Station__btn row col-2">
+                        <button class="btn js-data">data</button>
+                        <button class="btn js-chart">chart</button>
+                        <button class="btn js-down">download</button>
+                    </div>
+
+                </div>       
+
+                <div class="Station js-Station center">
+                    <div class="Station__location">
+                        <i class="fa-solid fa-house-flag"></i>
+                        <a class="btn" href="#">trạm 2</a>
+                    </div>
+
+                    <ul class="Station__status">
+                        <li class="js-temperature-1">nhiệt độ: </li>
+                        <li class="js-humidity-1">độ ẩm: </li>
+                        <li class="js-Cps-1">số đếm trên giây: </li>
+                        <li class="js-uSv-1">suất liều hấp thụ: </li>
+                        <li class="js-time-1">thời gian: </li>
+                    </ul>
+
+                    <div class="Station__btn row col-2">
+                        <button class="btn js-data">data</button>
+                        <button class="btn js-chart">chart</button>
+                        <button class="btn js-down">download</button>
+                    </div>
+
+                </div>  -->
+
+
+            </div>
+            
+            <div class="Footer row col-2">
+                <div class="Footer__Content">
+                    <p>
+                        © COPYRIGHT:......................... 
+                        trụ sở: Trường Đại học Khoa học Tự nhiên, ĐHQG-HCM. <br/>
+                    </p>
+                    <p>
+                        Email: 1chithanh2001@gmail.com 
+                        Điện thoại: 0000000000 - 0000000000 - fax: 0000000000 
+        
+                    </p>
+                </div>
+
+                
+                <div class="Footer__logoContact">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <form class="Modal submitModal js-submitModal row " > 
+
+            <div class="submitModal-body center">
+
+                <div class="chartModal__Close btn js-submitclose">
+                    <i class="fa-solid fa-xmark "></i>
+                </div>
+
+                <header class="Modal__Header">
+                    <i class="fa-solid fa-house-flag"></i>
+                    thêm trạm
+                </header>
+
+                <div class="chartModal__Container" >
+                <div class="formModal row col-1" >
+                        <div class="submit-form__name row">
+                            <label class="Modal-form__label"  for="form-stationName">
+                                <i class="fa-solid fa-house-flag"></i>
+                                tên trạm mới
+                            </label>
+                            <input class="Modal-form__input js-form-stationName" type="text" name="stationName" id="form-stationName" placeholder="nhập tên trạm">
+                        </div>
+
+                        <div class="submit-form__api row">
+                            <label class="Modal-form__label"  for="form-api">
+                                <i class="fa-solid fa-key"></i>
+                                nhập api 
+                            </label>
+                            <input class="Modal-form__input js-form-api" type="text" name="api" id="form-api" placeholder="api trên thiết bị">
+                        </div>
+
+                        <button class="btn Modal-form__btn js-submitButton" type="submit">SUBMIT</button>
+
+                    </div>
+                </div>
+        
+                <footer class="chartModal__Footer">
+                    <p>need <a href="#">help?</a></p>
+                </footer>
+
+            </div>
+    
+        </form>
+
+        <div class="js-ModalGroup">
+
+            <!-- <div class="Modal js-chartModal"> 
+    
+                <div class="chartModal-body js-chartModal-body">
+    
+                    <div class="chartModal__Close btn js-close">
+                        <i class="fa-solid fa-xmark "></i>
+                        
+                    </div>
+    
+                    <header class="Modal__Header">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        CHART 
+                    </header>
+    
+                    <div class="chartModal__Container row col-3" >
+                        <canvas id="js-tempHumiChart" class="chart" ></canvas>
+                        <canvas id="js-radiChart" class="chart" ></canvas>
+                    </div>
+            
+                    <footer class="chartModal__Footer">
+                        <p>need <a href="#">help?</a></p>
+                    </footer>
+    
+                </div>
+        
+            </div> -->
+                
+        </div>
+
+
+
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+        <script src="./main2.js"></script>
+    </body>
+</html>

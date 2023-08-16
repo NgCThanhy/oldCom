@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>position</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="box Sticky">Sticky</div> <!--cái này là của vd ở dưới nhưng để lên đây cho dễ nhìn-->
+        <h1>position</h1>
+        <p>position là một thuộc tính để xác định vị trí của các đối tượng (phần tử) <br/>
+        có thể ứng dụng để tạo ra các tag xuất hiện đè lên giao diện chính
+        </p>
+        <ul>
+            có 4 loại chính:
+            <li>Relative(tương đối): sẽ lấy vị trí ban đầu làm gốc tọa độ</li>
+            <li>Absolute(tuyệt đối): sẽ phụ thuộc vào thẻ cha gần nhất có thuộc tính position để làm gốc tọa độ </li>
+            <li>Fixed: sẽ phụ thuộc vào trình duyệt (html) => dùng làm header hoặc footer cho wed</li>
+            <li>Sticky: khá giống fixed nhưng thay vì di chuyển theo con cuộn thì nó sẽ đợi cuộn tới r dính đi theo (giống menu của nettr á) <br/>
+            lưu ý do thuộc tính này ko đc hỗ trợ nhìu nền tảng => ko khuyên dùng <br/>
+            => có thể kết hợp javaScript với fixed để làm thành hiệu ứng giống Sticky </li>
+        </ul>
+
+        <p>lưu ý khi dùng position thì về căn bản các đối tượng sẽ nổi lên hoặc chìm xuống so vs phần còn lại <br/>
+            => dễ che hoặc bị che các đối tượng khác <br/>
+            => dùng z-index để khắc phục
+        </p>
+
+        <p>cho 4 box để vd :</p>
+
+        
+        
+        <div class="ground">
+            <div class="box Relative">Relative</div>
+
+            <div class="Absolute">
+                <div class="Absolute-child">Absolute</div>
+            </div>    
+
+            <div class="box Fixed">Fixed</div>    
+        </div>
+        
+
+    </body>
+</html>

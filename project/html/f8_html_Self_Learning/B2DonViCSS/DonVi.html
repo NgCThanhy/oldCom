@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html style="font-size: 40px;"> <!--mặc định font-size của trình duyệt là 16px và html kế thừa cái đó. tuy nhiên ko nên để giá trị cứng như v
+                                => nên để Relative Unit là font-size: 62.5%; => nó sẽ tương ứng 10px, => 1.6rem = 16px :) -->
+    <head>
+        <title>đơn vị trong css</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <!-- css unit : là đơn vị sử dụng trong css để tùy chỉnh kích thước các đối tượng hiển thị
+        có 2 kiểu đơn vị :
+            - Absolute Unit : đơn vị tuyệt đối => ko thay đổi trong quá trình sử dụng
+            - Relative Unit : đơn vị tương đối => thay đổi trong quá trình sử dụng 
+        -->
+        <h1>1 Absolute Unit</h1>
+        <ul>
+            <li>px</li> <!--tùy vào độ phân giải của màng hình mà 1 px có thể = 1 điểm ảnh hoặc nhìu hơn-->
+            <li>pt</li>
+            <li>cm</li>
+            <li>mm</li>
+            <li>inch</li>
+            <li>pc</li>
+        </ul>
+        <h1>2 Relative Unit</h1>
+        <!-- tất cả các đơn vị Relative đều cần 1 giá trị để nó phụ thuộc vào.
+             sử dụng Relative Unit để hỗ trợ trong việc đáp ứng kích cỡ màn hình -->
+        <ul style="font-size: 30px;">
+            <li id="R-1">đơn vị % : phụ thuộc vào thẻ chứa nó</li> <!-- phụ thuộc vào thẻ ul => 100% = 30px --> 
+
+            <li id="R-2">rem : phụ thuộc vào thẻ html</li>  <!--phụ thuộc vào thuộc tính css tương ứng của html => 1rem = 40px -->
+            <li id="R-3">em : phụ thộc vào thẻ gần nhất chứa nó mà có thuộc tính css tương ứng</li> 
+            <!-- phụ thuộc vào thẻ gần nhất mà có chứa css "font-site" => là ul => 1em = 30px -->
+            
+            <!-- tùy vào trường hợp mà sử dụng rem hay em. với rem thì nó có thể chỉnh sửa nhanh cho toàn bộ wed
+            còn đối với em thì sẽ chỉnh sửa theo từng khối div -->
+            
+
+            <li id="R-4">vw(viewport width) : phụ thuộc vào chiều ngang của trình duyệt wed (chorme)</li>
+            <li id="R-5">vh(viewport height) : phụ thuộc vào chiều dọc của trình duyệt wed</li>
+            <!-- nó sẽ khác với % nhá, mà vẫn là từ 1 - 100 như % thôi  -->
+
+            <li id="R-6">vmin</li>
+            <li id="R-7">vmax</li>
+            <li id="R-8">ex</li>
+            <li id="R-9">eh</li>
+        </ul>
+
+        <!-- ngoài ra còn có một số cấu trúc mới như tạo 1 khung chữ nhật: -->
+        <div class="box"></div>
+
+    </body>
+</html>

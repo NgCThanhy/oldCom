@@ -1,0 +1,412 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%;  
+    /* font-size: 1.6em; */
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+}
+
+.row {
+    display: flex;
+}
+
+.center{
+    margin: auto;
+}
+
+.col-1 {
+    flex-direction: column;
+}
+
+.col-2 {
+    justify-content: space-between;
+}
+
+.col-3 {
+    justify-content: space-around;
+}
+
+.chart {
+    width:48% !important;
+    max-width:700px;
+    background-color: rgb(207, 216, 248); 
+    margin: 1px;
+}
+
+:root {
+    --headerBackGroundColor: #aca1a1;
+    --headerHeight: 4em;
+    
+    --headerBtnHoverBackGrounfColor: #b1acac;
+    --headerBtnHoverColor: #5852b4;
+    
+    --sliderBackGrounfColor: #aca1a1;
+    --stationBackGrounfColor: rgb(253, 253, 248);
+
+    --footerBackGroundColor: #2e2d2d;
+}
+
+/* base */
+/* ////////////////////////////////////////////////// */
+/* main */
+
+.Header {
+    width: 100%;
+    height: var(--headerHeight);
+    background-color: var(--headerBackGroundColor);
+
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+}
+
+.Header__Navbar {
+    list-style: none;
+}
+
+.Navbar-btn {
+    line-height: var(--headerHeight);
+    padding: 0 24px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #135299;
+}
+
+.Navbar-btn:hover { 
+    background-color: var(--headerBtnHoverBackGrounfColor) !important;
+    color: var(--headerBtnHoverColor) !important;
+}
+
+.Header__Logo {
+    padding: 0.3em;
+    margin-right: 12px;
+}
+
+.Header__Logo img {
+    object-fit: fill;
+}
+
+/*//////////////////////////////////////////*/
+
+.banner {
+    position: relative;
+    margin-top: var(--headerHeight);
+    padding-top: 36.56%;
+    background: url(/Banner_radiation.webp) top center /cover no-repeat;
+    position: relative;
+
+    text-transform: uppercase;
+}
+
+.banner__title {
+    position: absolute;
+    text-align: center;
+    top: 0 ;
+    left: 1em;
+    font-size: 3.1em;
+}
+
+.banner__subTitle {
+    position: absolute;
+    text-align: center;
+    top: 4em;
+    left: 3em;
+    font-size: 2em;
+}
+
+/*//////////////////////////////////////////*/
+
+.slider {
+    padding: 6.5em 0;
+    background-color: var(--sliderBackGrounfColor);
+}
+
+.selectStation {
+    width: 100%;
+    background-color: rgb(58, 55, 7);
+    padding: 20px;
+    margin: 6px;
+}
+
+.selectStation button {
+    background-color: #000;
+    padding: 1em 0;
+    margin-right: 5px;
+    border-radius: 10px;
+    border: 2px solid yellow;
+
+    min-width: 10em;
+
+    text-align: center;
+}
+
+.selectStation button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+
+.Station {
+    background-color: var(--stationBackGrounfColor);
+    width: 80% ;
+    padding: 1.6em ;
+    border-radius: 10px;
+}
+
+.Station__location {
+    text-align: center;
+}
+
+.Station__location a {
+    line-height: 5em;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: black;
+}
+
+.Station__location i {
+    font-size: 5em;
+}
+
+.Station__location:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.Station__status {
+    margin: 2em 0;
+    list-style: none;
+    font-size: 2em;
+}
+
+.Station__btn button {
+    background-color: #135299;
+    padding: 1em 0;
+    border-radius: 10px;
+
+    min-width: 10em;
+
+    text-align: center;
+}
+
+.Station__btn button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+/*//////////////////////////////////////////*/
+
+.Footer {
+    background-color: var(--footerBackGroundColor);
+    color: #fff;
+    padding: 1em 2.4em;
+}
+
+.Footer__Content {
+    font-size: 1em;
+    line-height: 2.1em;
+}
+
+.Footer__logoContact {
+    line-height: 4.2em;
+}
+
+.Footer__logoContact i {
+    padding: 0 0.4em;
+    cursor: pointer;
+}
+
+/* ////////////////////////////////////////////////// */
+/* Modal: */
+
+.Modal {    /* tạo lớp phủ mờ mờ (overlay) */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.submitModal-body {
+    position: relative;
+    width: 40%;
+    min-height: 100px;
+    background-color: #ece9e0ee;
+    margin: auto;
+
+    animation: ModalFloatIn ease .4s;
+}
+
+.formModal {
+    min-width: 24px;
+}
+
+.Modal-form__label {
+    font-size: 16px;
+    flex: 0 0 auto;
+    margin-right: 8px;
+}
+
+.Modal-form__input {
+    flex: 1;
+}
+
+.submit-form__name {
+    margin-bottom: 10px;
+    flex: 1;
+}
+
+.submit-form__api {
+    margin-bottom: 10px;
+
+}
+
+
+.Modal-form__btn {
+    background-color: #34e684;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.Modal-form__btn:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+
+
+.chartModal-body {
+    position: relative;
+    width: 90%;
+    min-height: 200px;
+    background-color: #ece9e0ee;
+    margin: auto;
+
+    animation: ModalFloatIn ease .4s;
+}
+
+.chartModal__Close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.Modal__Header {
+    height: 50px;
+    background-color: #009688;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    color: #fff;
+
+    display: flex;
+}
+
+.Modal__Header i{
+    margin-right: 16px;
+}
+
+.chartModal__Container {
+    padding: 16px;
+}
+
+
+.chartModal__Footer {
+    padding:0 6px 6px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 15px;
+}
+
+@keyframes ModalFloatIn {
+    from{
+        transform: translateY(-130px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+
+/* ////////////////////////////////////////////////// */
+
+
+
+
+/* ////////////////////////////////////////////////// */
+/* break point */
+
+/* Tablet: width >= 740px and < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    
+    html {
+        font-size: 25.5%;
+    }
+
+    .Station__btn button{
+        min-width: 6em;
+    }
+    
+    /* :root {
+        --headerHeight: 6em;
+    }
+
+    .Station__location a {
+        line-height: 0;
+    }
+
+    .banner__subTitle {
+        font-size: 1.5em;
+    }
+
+    .banner__title {
+        font-size: 2em;
+    }
+
+    .Navbar-btn {
+        font-size: 1.5em;
+        line-height: 4em;
+    } */
+}
+
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+    .banner__title {
+        display: none;
+    }
+
+    .banner__subTitle {
+        top: 6em;
+        left: 1em;
+        font-size: 1em;
+    }
+
+    .slider {
+        flex-direction: column;
+    }
+
+    .Station {
+        width: 90%;
+        margin: 2em;
+    }
+
+}

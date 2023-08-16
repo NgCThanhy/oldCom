@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>form trong html</title>
+    </head>
+
+    <body>
+        <h1>Biểu mẫu - web form</h1>
+        <p>được tạo ra trong HTML là khu vực hình thành nên sự tương tác giữa người dùng và ứng dụng web. <br/>
+            Các form cho phép người dùng nhập dữ liệu vào, sau đó gửi dữ liệu đó cho web server, <br/>
+            hoặc nhập dữ liệu vào sử lý dữ liệu ngay tại client side. <br/>
+            <br/>
+            form trong HTML được tạo ra bằng thẻ < form>, <br/>
+            bên trong form đó nó chứa một hoặc nhiều phần tử để nhập liệu gọi là các điều khiển (control)
+        </p>
+        
+
+        <label form="form_id">đây là một form cơ bản:</label>
+            <!-- với thuộc tính form ="form_id" dùng để liên kết cũng như chỉ định label này thuộc về form nào -->
+
+        <form action="" method="" id="form_id">
+            <!-- trong thẻ form có 2 thuộc tính cần chú ý:
+                action: thuộc tính để thiết lập URL sẽ nhận dữ liệu, là địa chỉ mà dữ liệu của form gửi (submit) đến
+                    default = url của wed hiện tại
+                method:  thuộc tính để thiết lập HTTP Method
+                    default =  get (sẽ add thông tin vào trong url)
+                    => dùng post an toàn hơn (ko rò dữ liệu) -->
+
+            
+            <!-- các thông tin có trong form thường được tạo bởi thẻ input.
+            có 3 thuộc tính quan trọng trong thẻ input:
+                type  : thuộc tính quyết định các kiểu thu thập dữ liệu (text, button, CheckBox...)           
+                name  : thuộc tính xác định tên của input :) và cũng là một key của value mà input thu thập
+                id    : thuộc tính thông thường dùng để khớp vs for của label -->
+
+            <label for="acc_name_id">nhập tên đăng nhập</label>
+            <input type="text" name="acc_name" id="acc_name_id" placeholder="tên đăng nhập">    
+            <!-- type="text" sẽ tạo ra 1 hộp nhập liệu 1 dòng -->
+                
+            <br/>
+
+            <label for="acc_pass_id">nhập password</label>
+            <input type="password" name="acc_pass" id="acc_pass_id" placeholder="password">
+            <!-- type="password" sẽ tạo ra 1 hộp chuyên dụng nhập password => nó sẽ ẩn những gì nhập: ***** -->
+
+            <br/>
+
+            <label for="radio_id">chọn địa điểm</label> <br/>
+            <input type="radio" name="place" id="radio_id" value="HN"> Hà Nội <br/>
+            <input type="radio" name="place" id="radio_id" value="HUE"> Huế <br/>
+            <input type="radio" name="place" id="radio_id" value="TPHCM" checked> TP. Hồ Chí Minh
+            <!-- type="radio" sẽ tạo ra một danh sách các lựa chọn thuộc cùng một nhóm (có cùng name) và chỉ chọn được 1
+                => nó sẽ trả về giá trị chứa trong thuộc tính value
+                => { place: "TPHCM" } -->
+
+            <br/>
+
+            <!-- ngoài ra còn có một kiểu tương tự như radio mà ko sử dụng input: -->
+            <label for="select_id">chọn quốc gia</label>
+            <select name="nation" id="select_id">
+
+                <option value="">--mời chọn giới tính--</option>
+                
+                <optgroup label="Asia">
+                    <option value="VN">Việt Nam</option>
+                    <option value="JAP">Nhật Bản</option>
+                    <option value="CHINA">Trung Quốc</option>
+                </optgroup>
+
+                <optgroup label="Europe">
+                    <option value="UK">Anh</option>
+                    <option value="FRA">Pháp</option>
+                    <option value="GER">Đức</option>
+                </optgroup>
+
+                <optgroup label="Americas" disabled>
+                    <option value="US">Hoa Kỳ</option>
+                    <option value="SPAIN">Tây Ban Nha</option>
+                </optgroup>
+
+            </select>
+
+            <br/>
+            
+            <label for="a_checkbox_id">liệu bạn đã đủ tuổi:</label> <br/>
+            <input type="checkbox" name="R18" id="a_checkbox_id" value="ok"> tôi đã trên 18 tuổi
+            <!-- type="checkbox" sẽ tạo ra một hộp checkbox :)  -->
+            <br/>
+            <br/>
+
+            <input type="checkbox" name="love" id="group_checkbox_id_1" value="LoveHTML">
+            <label for="group_checkbox_id_1">Tôi thích HTML</label><br/>
+            <input type="checkbox" name="love" id="group_checkbox_id_2" value="LoveCSS">
+            <label for="group_checkbox_id_2">Tôi thích CSS</label>
+            <!-- nếu có nhìu checkbox cùng name thì có thể check nhìu cái 
+            => trả về 1 mảng
+                { love: [ "LovePHP", "LoveHTML" ] } -->
+
+            <br/>
+
+            <!-- tuy nhiên phần quan trọng nhất trong 1 form chính là nút bấm submit/reset:
+            có thể tạo ra 2 nút trên bằng 
+                thẻ input  : đơn giản nhạnh gọn lẹ
+                thẻ button : do có phần đóng thẻ nen có thể chêm vô nhìu thứ => phong phú về hình thức
+            -->
+
+            <input type="submit"  value="Gửi dữ liệu" />
+            <input type="reset" value="Nhập lại" />
+            <!-- nhãn nút bấm thiết lập qua thuộc tính value="Text", 
+            Tạo nút bấm gửi (submit) thì cho thuộc tính type="submit",
+            Tạo nút bấm reset, bấm vào đó toàn bộ dữ liệu trong các control của FORM bị xóa đi về mặc định
+            *****Chú ý, nếu các nút bấm trên bạn cho thêm thuộc tính name, ví dụ name="submit", name="reset" 
+                thì dữ liệu (trong value) của nút bấm cũng được gửi đi cùng các dữ liệu khác. -->
+
+            <br/>
+
+            <button type="submit"> <strong>Gửi</strong> </button>
+            <button type="reset"> <strong>Nhập lại</strong> </button>
+            <!-- nút bấm thì phong phú hơn -->
+
+            
+        </form>
+
+        <a href="https://xuanthulab.net/the-label-va-the-input-trong-html.html#password"> còn nhìu vô đây xem</a>
+    </body>
+
+</html>

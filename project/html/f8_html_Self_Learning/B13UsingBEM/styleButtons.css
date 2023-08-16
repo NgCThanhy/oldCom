@@ -1,0 +1,67 @@
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin: 16px 0;
+}
+
+.Buttons {
+    background-color: transparent; /*cho background thành trong suốt*/
+    border: none; /*xóa viền*/
+    outline: none; /*xóa vòng ngoài*/ 
+    text-decoration: none; /*xóa gạch chân của link*/
+    color: #fff;
+    /*lưu ý cần phải loại bỏ tất cả các trường hợp đặc biệt (màu sắc, viền ...) để đưa về trường hợp chung nhất
+    sau đó mới thêm các phần phụ sau.*/
+    /*ngoài ra các tính chất chung cũng đc để vào đây*/
+    padding: 10px 32px;
+    border-radius: 20px; /*dùng để bo tròn các góc*/
+    min-width: 150px; /*dùng khi chữ quá ít thì kích thước ko quá nhỏ*/
+
+    /*ngoài ra 1 nút sẽ có 2 trạng thái cơ bản là :
+        - enable (bấm đc) => khi di chuột vào phải có sự biến đổi
+        do enable là mặc định => để trong khối block đc
+
+        - disable (ko bấm đc) => ngược lại ko có hiệu ứng gì
+        nên để là 1 Modifier
+    */
+    cursor: pointer; /*di chuột vào sẽ thành bàn tay chỉ vào. ngoài ra cursor cũng là 1 lớp ảo :hover*/
+    transition: opacity 0.2s ease; /*nếu thấy hiệu ứng của hover nhanh quá thì sài cái này*/
+}
+
+.Buttons:hover { /*khi di chuột vào thì ...*/
+    opacity: 0.7; /*giảm độ mờ xuống từ 1(mặc định) thành 0.7*/
+}
+
+/* sau khi tạo ra 1 block thì ta sẽ tạo ra các Element hoặc các Modifier: */
+
+.Buttons--flame {
+    background-color: red;
+}
+
+.Buttons--ice {
+    background-color: blue;
+}
+
+.Buttons--thunder {
+    background-color: purple;
+}
+
+.Buttons--disable {
+    /* đầu tiên phải cho nó nhìn như ko mún bấm vào => giảm độ trong xuống hoặc cho màu xám */
+    opacity: 0.1 !important; /*với important swx vô hiệu hóa các opacity khác*/
+    cursor: default;
+}
+
+.Buttons--size-s {
+    padding: 5px 32px;
+    font-size: 10px;
+}
+
+.Buttons--size-l {
+    padding: 20px 32px;
+    font-size: 25px;
+}
+
+

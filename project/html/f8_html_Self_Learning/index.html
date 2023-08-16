@@ -1,0 +1,145 @@
+<!--như vầy là ghi chú á-->
+<!--file index sẽ là file cho trang chủ--> 
+<!DOCTYPE html> <!--phần khai báo định nghĩa loại tài liệu là html--> 
+
+<!--
+1 file html có rất nhiều loại thẻ(tag) khác nhau 
+và có rất nhiều công dụng khác nhau.
+cú pháp: 
+    <tên> => thẻ mở
+        .......
+    </tên> => thẻ đóng
+đầu tiên thì học 9 loại thẻ:
+        + h1 - h6  // (heading) tiêu đề
+        + p // paragraph
+        + span // sub paragraph
+        + img // hình ảnh
+        + a // (anchor) neo liên kết (đính kèm link á)
+        + ul / ol, li // (unordered list, list item) danh sách
+        + table // bảng
+        + input  // nhập liệu
+        + button // nút bấm đc 
+        + div // dùng để bao quanh từng khối => dễ quản lý sử dụng
+-->
+
+<html> <!-- thẻ html. một file html chỉ có 1 thẻ này thui -->
+<!--
+    một thẻ html có 2 phần:
+    - phần đầu head
+    - phần thân body
+-->
+    <head> <!--phần đầu thường dùng để định nghĩa tiêu đề wed-->
+        <title>f8_html_test_title á</title> <!--hiển thị trên tag và là tiêu đề được hiển thị khi tìm kiếm bằng google-->
+        <meta charset="utf-8"> <!--hỗ trợ hiển thị tiếng việt trong phần body á-->
+    </head>
+
+    <body> <!-- quyết định nội dung hiển thị trên wed-->
+        <div>
+            <h1>tiêu đề của đoạn 1</h1> <!--thẻ h1 là tiêu đề của 1 đoạn văn hoặc bài báo-->
+
+            <p> <!-- thẻ p là phần nội dung của đoạn văn hay bài báo-->
+                nội dung của đoạn văn 1: sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            </p>
+
+            <!-- có thể dùng thẻ <span> để tách riêng 1 phần nào đó của văn bản (để css riêng chăng)-->
+            <p>đây là nội dung của <span>đoạn văn 2</span> và nó y chang trên</p>
+            
+            <!-- thẻ img là thẻ dùng để gán hình ảnh
+                với src là nguồn(link) của ảnh cần gán.
+                alt là phần chữ sẽ hiển thị khi link bị lỗi
+                onerror là phần hình ảnh sẽ hiển thị khi lỗi 
+            -->
+            <img src="https://tse3.mm.bing.net/th?id=OIP.FyIeeEwF9mi43nbU2Y9HAAHaEK&pid=Api&P=0" alt="chisato"> 
+
+            <!-- thẻ a dùng để gán link đến 1 trang wed khác với href là nguồn link  -->
+            <a href="https://anime47.com/phim/lycoris-recoil/m8689.html"> xem anime lycoris recoil</a>
+
+            <!-- thẻ ul và thẻ li dùng để làm 1 danh sách các phần tử  -->
+            <ul> <!-- giới hạn cho phần danh sách-->
+                 charactor list
+                 <li>Chisato Nishikigi</li>
+                 <li>Takina Inoue</li>
+                 <li>Kurumi</li>
+                 <li>Mika</li>
+                 <li>Mizuki Nakahara</li>
+            </ul>
+
+            <ol> <!--với ol thì cũng như <ul> nhưng thay vì dấu chấm đầu dòng thì thay bằng số-->
+                <li>hehe</li>
+                <li>haha</li>
+            </ol>
+
+            <!-- thẻ table dùng để tạo 1 bảng :)). trong thẻ table thì cũng có phần đầu vào phần thân -->
+            <table>
+                <thead> <!--phần đầu của bảng-->
+                    <h2>Episode table</h2> <!--sài h v cũng đc hoặc viết như trên thẻ ul cũng ok-->
+                    <!-- thẻ th là table heading dùng để hiển thị các tiêu đề của cột theo thứ tự -->
+                    <th>No</th>
+                    <th>Title</th>
+                    <th>Original air date</th>
+
+                </thead>
+
+                <tbody>
+                    <!-- trong phần tbody thì gồm các thẻ <tr> chứa nội dung theo hàng của các tiêu đề cột -->
+                    <tr> <!-- thẻ tr (table row) dùng để chứa nội dung <td> tương ứng với các <th> trên phần <thead>-->
+                        <td>1</td>
+                        <td>"Easy does it"</td>
+                        <td>July 2, 2022</td>
+                    </tr>
+                    
+                    <tr> 
+                        <td>2</td>
+                        <td>"The more the merrier"</td>
+                        <td>July 9, 2022</td>
+                    </tr>
+
+                    <tr> 
+                        <td>3</td>
+                        <td>"More haste, less speed"</td>
+                        <td>July 16, 2022</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+            <!-- thẻ input gồm nhiều kiểu nhận dữ liệu như: -->
+            <input type="text"> <!---kiểu nhập một chuỗi trong 1 khung-->
+            <input type="checkbox"> <!--tạo ra dấu tick-->
+            <input type="radio" name="haha" id=""> <!--tạo ra dấu tích chỉ đc tich 1 nếu có cùng phần name-->
+            <input type="radio" name="haha" id="">
+            <input type="radio" name="haha" id="">
+
+            <!-- tạo ra một nút bầm :)) -->
+            <button>hahahaha</button>
+            <a href="https://en.wikipedia.org/wiki/Lycoris_Recoil#Media"> <button>xem thông tin</button> </a>
+
+        </div>
+
+        <div>
+
+            <!--
+                attribute là một thuộc tính của "thẻ"
+                có rất nhiều loại thuộc tính
+                attribute ở trong cặp dấu <> => type, name trong <input> hoặc href trong <a> cũng là attribute
+             -->
+            <h1 title="đây là thuộc tính title">tiêu đề của đoạn 2</h1>
+
+            <p>
+                nội dung của đoạn văn 2: sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            </p>
+            <img src="image.png" alt="takina">
+            <a href="http://127.0.0.1:5500/usingCSS.html">bài tiếp theo</a>
+        </div>
+    
+    </body>
+
+</html><!-- thẻ đóng của thẻ html-->

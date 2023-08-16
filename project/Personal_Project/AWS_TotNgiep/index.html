@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    </head>
+
+    <title>AN TOÀN PHÓNG XẠ</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <div id="loader" >
+        <div class="loader-content">
+          <h1>Loading...</h1>
+        </div>
+    </div>
+
+    <div class="main upWord row">
+
+        <div class="sideBar row col-1 col-2">
+            <div class="logo sv-align"></div>
+            
+            <div class="navbar">
+                <ul class="row col-1">
+                    <li class="BtnLarger btn sideBarBtn js-sideBarBtn_home ">home</li>
+                    <li class="BtnLarger btn sideBarBtn js-sideBarBtn_station ">station</li>
+                    <li class="BtnLarger btn sideBarBtn js-sideBarBtn_table ">table</li>
+                    <li class="BtnLarger btn sideBarBtn js-sideBarBtn_graph ">composite graph</li>
+                </ul>
+            </div>
+            
+            <div class="community row col-2">
+                <div class="community__facebook">
+                    <a href="https://www.facebook.com/groups/SV.HCMUS/" target="_blank">
+                        <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                    </a>  
+                </div>
+
+                <div class="community__instagram">
+                    <a href="https://www.instagram.com/vnuhcmus/" target="_blank">
+                        <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                    </a> 
+                </div>
+
+                <div class="community__twitter">
+                    <a href="https://twitter.com/hcmus_edu" target="_blank">
+                        <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+                    </a> 
+                </div>
+                
+                <div class="community__linkedin">
+                    <a href="https://www.linkedin.com/company/ho-chi-minh-city-university-of-science" target="_blank">
+                        <i class="fa-brands fa-linkedin" style="color: #ffffff;"></i>
+                    </a> 
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>
+                    © COPYRIGHT:......................... <br/>
+                    trụ sở: Trường Đại học Khoa học Tự nhiên, ĐHQG-HCM. <br/>
+                </p>
+                <p>
+                    Email: 1chithanh2001@gmail.com <br/>
+                    Điện thoại: 0000000000 - 0000000000 <br/>
+                    fax: 0000000000 
+    
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="header row">
+                <div class="mobileSideBar">
+                    <div class="mobileLogo sv-align">
+                        <img src="./logoRewesShortened.png" alt="">
+                    </div>
+                </div>
+
+                <div class="navbar_name js-navbar_name center js-homeNameBar">home</div>
+                <div class="navbar_name js-navbar_name center js-stationNameBar">station</div>
+                <div class="navbar_name js-navbar_name center js-tableNameBar">table</div>
+                <div class="navbar_name js-navbar_name center js-graphNameBar">graph</div>
+
+                <div class="line sv-align"></div>
+
+                <div class="accout js-accout sv-align row"> 
+                    <div class="accoutBtn js-accoutBtn center row">
+                        <i class="fa-solid fa-user"></i>
+                        <div class="js-userName">
+                            account
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="line sv-align "></div>
+
+                <div class="reloadBtn js-reloadBtn sv-align row">
+                    <i class="fa-solid fa-right-from-bracket center"></i>
+                </div>
+            </div>
+
+            <ul class="mobile_contentBtn noneDis">
+                <li class="btn js-mobile_contentBtn_home">home</li>
+                <li class="btn js-mobile_contentBtn_station">station</li>
+                <li class="btn js-mobile_contentBtn_table">table</li>
+                <li class="btn js-mobile_contentBtn_graph">graph</li>
+            </ul>
+
+            <div class="js-content js-content__home content__home row col-1"> 
+                <img src="./logoRewes.png" alt="hehe" class="sv-align">
+                <div class="text center">
+                    <p>
+                        ReWes là một trang web quan trắc phóng xạ môi trường thời gian thực trực tuyến thông qua các trạm quan trắc.
+                        các trạm quan trắc là một tổ hợp của các cảm biến môi trường được thiết lập và kết nối thông qua vi điều kiển ESP 8266.
+                        Các trạm sẽ liên tục gửi các thông số môi trường về server sau đó hiển thị lên web thời gian thực.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="js-content js-content__station content__station">
+                <div class="StationBtn js-selectStation row v-align">
+                    <button class="js-addStationBtn btn upWord">add station</button>
+                    <!-- <button class="js-stationButton btn upWord">Tram1</button> -->
+                </div>
+
+                <!-- <div class="Station js-Station center">
+                    <div class="Station__location row col-2">
+
+
+                        <div class="location_clock row v-align">
+                            <i class="fa-solid fa-clock"></i>
+                            <div class="dayTimeBlock js-time">
+                                24:59:59
+                            </div>
+                        </div>
+
+                        <div class="location_name">
+                            <i class="fa-solid fa-house-flag"></i>
+                            trạm 1
+                        </div>
+                        
+
+                        <div class="location_calendar row v-align">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <div class="dayTimeBlock js-day">
+                                31/12/9999
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Station__status row col-3 col-1">
+                        <div class="mobile_status_section row col-3">
+                            <div class="status_section js-temperature-1">nhiệt độ:10</div>
+                            <div class="status_section js-humidity-1">độ ẩm: 10</div>
+                        </div>
+
+                        <div class="mobile_status_section row col-3">
+                            <div class="status_section js-Cps-1">số đếm trên giây: 10</div>
+                            <div class="status_section js-uSv-1">suất liều hấp thụ: 10</div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="Station__btn row col-2">
+                        <button class="btn upWord js-chart">chart</button>
+                        <button class="btn upWord js-down">download</button>
+                    </div>
+
+                </div>   -->
+                
+            </div>
+
+            <div class="js-content js-content__table content__table">
+                <h2>table of stations</h2>
+
+                <table>
+                    <thead>
+
+                      <th>status</th>
+                      <th>temp</th>
+                      <th>humi</th>
+                      <th>Cps</th>
+                      <th>uSv</th>
+
+                    </thead>
+                    <tbody class="js-table">
+
+                      <!-- <tr>
+                        <td class="js-table_name">trạm 1</td>
+                        <td class="js-table_temp">10 dd</td>
+                        <td class="js-table_humi">10 %</td>
+                        <td class="js-table_cps">1 cps</td>
+                        <td class="js-table_usv">1 uSv</td>
+                      </tr>
+
+                      <tr>
+                        <td>trạm 1</td>
+                        <td>10 dd</td>
+                        <td>10 %</td>
+                        <td>1 cps</td>
+                        <td>1 uSv</td>
+                      </tr> -->
+
+                    </tbody>
+                  </table>
+                  
+                </table>
+        
+
+            </div>
+
+            <div class="js-content js-content__graph content__graph">
+                <div class="StationBtn js-selectGraph row v-align">
+                    <button class="js-temperatureGraphBtn btn upWord">temperature</button>
+                    <button class="js-humidityGraphBtn btn upWord">humidity</button>
+                    <button class="js-cpsGraphBtn btn upWord">cps</button>
+                    <button class="js-usvGraphBtn btn upWord">usv</button>
+                </div>
+                <div class="compositeGraph row col-3">
+                    
+                    <div id="js-temperatureIDDiv" class="js-temperatureGraphDiv js-graphDiv graph"></div>
+                    <div id="js-humidityIDDiv" class="js-humidityGraphDiv js-graphDiv graph"></div>
+                    <div id="js-cpsIDDiv" class="js-cpsGraphDiv js-graphDiv graph"></div>
+                    <div id="js-usvIDDiv" class="js-usvGraphDiv js-graphDiv graph"></div>
+                                        
+                </div>
+            </div>
+            
+
+            
+            <div class="mobileFooter">   
+                <div class="footer">
+                    <p>
+                        © COPYRIGHT:......................... <br/>
+                        trụ sở: Trường Đại học Khoa học Tự nhiên, ĐHQG-HCM. <br/>
+                    </p>
+                    <p>
+                        Email: 1chithanh2001@gmail.com <br/>
+                        Điện thoại: 0000000000 - 0000000000 <br/>
+                        fax: 0000000000 
+        
+                    </p>
+                </div>
+
+                <div class="community row col-2">
+                    <div class="community__facebook">
+                        <a href="https://www.facebook.com/groups/SV.HCMUS/" target="_blank">
+                            <i class="fa-brands fa-facebook" style="color: #000;"></i>
+                        </a>  
+                    </div>
+    
+                    <div class="community__instagram">
+                        <a href="https://www.instagram.com/vnuhcmus/" target="_blank">
+                            <i class="fa-brands fa-instagram" style="color: #000;"></i>
+                        </a> 
+                    </div>
+    
+                    <div class="community__twitter">
+                        <a href="https://twitter.com/hcmus_edu" target="_blank">
+                            <i class="fa-brands fa-twitter" style="color: #000;"></i>
+                        </a> 
+                    </div>
+                    
+                    <div class="community__linkedin">
+                        <a href="https://www.linkedin.com/company/ho-chi-minh-city-university-of-science" target="_blank">
+                            <i class="fa-brands fa-linkedin" style="color: #000;"></i>
+                        </a> 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+    <form class="Modal js-loginModal row" > 
+
+        <div class="submitModal-body center">
+
+            <div class="chartModal__Close btn js-loginclose">
+                <i class="fa-solid fa-xmark "></i>
+            </div>
+
+            <header class="Modal__Header">
+                <i class="fa-solid fa-user"></i>
+                Login
+            </header>
+
+            <div class="chartModal__Container" >
+            <div class="formModal row col-1" >
+                    <div class="submit-form__name row">
+                        <label class="Modal-form__label"  for="form-loginUserName">
+                            <i class="fa-solid fa-user"></i>
+                            user name
+                        </label>
+                        <input class="Modal-form__input js-form-loginUserName" type="text" name="loginUserName" id="form-loginUserName" placeholder="nhập tên đăng nhập">
+                    </div>
+
+                    <div class="submit-form__api row">
+                        <label class="Modal-form__label"  for="form-loginUserPass">
+                            <i class="fa-solid fa-key"></i>
+                            password
+                        </label>
+                        <input class="Modal-form__input js-form-loginUserPass" type="password" name="loginUserPass" id="form-loginUserPass" placeholder="nhập mật khẩu">
+                    </div>
+
+                    <button class="btn Modal-form__btn js-loginButton" type="button">LOGIN</button>
+
+                </div>
+            </div>
+    
+            <footer class="chartModal__Footer">
+                <p>don't have account <button class="btn registerBtn js-registerBtn" type="button">register?</button></p>
+            </footer>
+
+        </div>
+
+    </form>
+
+    <form class="Modal js-registerModal row" > 
+
+        <div class="submitModal-body center">
+
+            <div class="chartModal__Close btn js-registerclose">
+                <i class="fa-solid fa-xmark "></i>
+            </div>
+
+            <header class="Modal__Header">
+                <i class="fa-solid fa-user"></i>
+                register
+            </header>
+
+            <div class="chartModal__Container" >
+            <div class="formModal row col-1" >
+                    <div class="submit-form__name row">
+                        <label class="Modal-form__label"  for="form-registerUserName">
+                            <i class="fa-solid fa-user"></i>
+                            user name
+                        </label>
+                        <input class="Modal-form__input js-form-registerUserName" type="text" name="registerUserName" id="form-registerUserName" placeholder="nhập tên đăng nhập">
+                    </div>
+
+                    <div class="submit-form__api row">
+                        <label class="Modal-form__label"  for="form-registerUserPass">
+                            <i class="fa-solid fa-key"></i>
+                            password
+                        </label>
+                        <input class="Modal-form__input js-form-registerUserPass" type="password" name="registerUserPass" id="form-registerUserPass" placeholder="nhập mật khẩu">
+                    </div>
+
+                    <div class="submit-form__api row">
+                        <label class="Modal-form__label"  for="form-registerConfirmPass">
+                            <i class="fa-solid fa-key"></i>
+                            confirm
+                        </label>
+                        <input class="Modal-form__input js-form-registerConfirmPass" type="password" name="registerConfirmPass" id="form-registerConfirmUserPass" placeholder="xác nhận mật khẩu">
+                    </div>
+
+                    <button class="btn Modal-form__btn js-registerButton" type="button">REGISTER</button>
+
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <form class="Modal js-submitModal row" > 
+
+        <div class="submitModal-body center">
+
+            <div class="chartModal__Close btn js-submitclose">
+                <i class="fa-solid fa-xmark "></i>
+            </div>
+
+            <header class="Modal__Header">
+                <i class="fa-solid fa-house-flag"></i>
+                thêm trạm
+            </header>
+
+            <div class="chartModal__Container" >
+            <div class="formModal row col-1" >
+                    <div class="submit-form__name row">
+                        <label class="Modal-form__label"  for="form-stationName">
+                            <i class="fa-solid fa-house-flag"></i>
+                            tên trạm mới
+                        </label>
+                        <input class="Modal-form__input js-form-stationName" type="text" name="stationName" id="form-stationName" placeholder="nhập tên trạm">
+                    </div>
+
+                    <div class="submit-form__api row">
+                        <label class="Modal-form__label"  for="form-api">
+                            <i class="fa-solid fa-key"></i>
+                            nhập api 
+                        </label>
+                        <input class="Modal-form__input js-form-api" type="text" name="api" id="form-api" placeholder="api trên thiết bị">
+                    </div>
+
+                    <button class="btn Modal-form__btn js-submitButton" type="button">SUBMIT</button>
+
+                </div>
+            </div>
+    
+            <footer class="chartModal__Footer">
+                <p>need <a href="#">help?</a></p>
+            </footer>
+
+        </div>
+
+    </form>
+
+    <div class="js-ModalGroup ">
+
+        <!-- <div class="Modal js-chartModal"> 
+
+            <div class="chartModal-body js-chartModal-body">
+
+                <div class="chartModal__Close btn js-close">
+                    <i class="fa-solid fa-xmark "></i>
+                    
+                </div>
+
+                <header class="Modal__Header">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    CHART 
+                </header>
+
+                <div class="chartModal__Container chartModal__ContainerMobile row col-3" >
+                    <div class="chart">
+                        <canvas id="js-tempHumiChart${station.timestamp.N}" ></canvas>
+                    </div>
+                    <div class="chart">  
+                        <canvas id="js-radiChart${station.timestamp.N}" ></canvas>
+                    </div>
+                </div>
+        
+                <footer class="chartModal__Footer">
+                    <p>need <a href="#">help?</a></p>
+                </footer>
+
+            </div>
+    
+        </div> -->
+            
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+    <script>
+        window.addEventListener('load', function() {
+            var loader = document.getElementById('loader');
+            setTimeout(function() {
+            loader.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+
+    <script src="./main.js"></script>
+</body>
+</html>

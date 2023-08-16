@@ -1,0 +1,36 @@
+.box::before{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    content: "box";
+    display: block;
+}
+
+.Inbox {
+    width: 50px;
+    height: 50px;
+    background-color: navy;
+    padding: 10px;
+/* bên trên đã đc đệm */
+
+    border-width: 10px; /*độ dày của viền*/
+    /*cái trên đã viết gọn 
+    => viết chính chủ: 
+        - border-top width .... 
+    */
+    border-style: solid; /*kiểu viền (solid là đường thẳng với mặc định độ dài 2px và màu đen)*/
+    border-color: rebeccapurple; /*màu viền :) */
+    /*có thể viết gọn mớ trên như lày:
+        border: 10px solid rebeccapurple;    
+    */
+    
+}
+
+.box::after{
+    width: 50px;
+    height: 50px;
+    background-color: yellowgreen;
+    content: "box";
+    display: block;
+}
+

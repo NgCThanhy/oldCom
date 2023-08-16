@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>REWES</title>
+ <link rel="icon" type="image/png" href="https://cdn.glitch.com/72508b62-
+879c-4bcd-9f45-847e6b54c5ea%2FlogoRE.jpg?v=1623406345951">
+ <script src="/socket.io/socket.io.js"></script>
+ <script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <style>
+ h1 {
+ color: black;
+ }
+ h2 {
+ color: blue;
+ }
+ .block1 {
+ display: flex;
+ flex-direction: row;
+ background-color: white;
+ border: none;
+ color: black;
+ align-items: center;
+ justify-content: center;
+ font-size: 50px;
+ font-weight: bold;
+ border-radius: 10px;
+ width: 1030px;
+ height: 60px;
+ cursor: pointer;
+ margin-top: 0.5%;
+ }
+ .block2 {
+ display: flex;
+ flex-direction: row;
+ background-color: white;
+ border: none;
+ color: orange;
+ align-items: center;
+ justify-content: center;
+ font-size: 25px;
+ font-weight: bold;
+ border-radius: 10px;
+ width: 1030px;
+ height: 30px;
+ cursor: pointer;
+ margin-top: 0.5%;
+ }
+ .block3 {
+ display: flex;
+ flex-direction: row;
+ background-color: white;
+ border: none;
+ color: orange;
+ align-items: center;
+ justify-content: center;
+ font-size: 25px;
+ font-weight: bold;
+ border-radius: 10px;
+ width: 1030px;
+ height: 30px;
+ cursor: pointer;
+ margin-bottom: 2%;
+ }
+ .block {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-around;
+ border: 1px solid blue;
+ border-radius: 25px;
+ padding: 15px;
+ width: 1000px;
+ margin-top: 10px;
+ background-color: #f8e918;
+ }
+ .temp {
+ flex-direction: row;
+ display: flex;
+ align-items: flex-start;
+ justify-content: center;
+ width: 120px;
+ margin-left: 15px;
+}
+
+.tempVal {
+flex-direction: row;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 60px;
+color: rgb(2, 18, 243);
+font-weight: 500;
+}
+.tempUnit {
+flex-direction: row;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 20px;
+color: rgb(2, 18, 243);
+}
+.tempO {
+color: rgb(2, 18, 243);
+font-size: 15px;
+margin: 2px;
+}
+.tempS {
+color: rgb(2, 18, 0);
+font-size: 25px;
+margin: 2px;
+}
+
+.button {
+display: flex;
+flex-direction: row;
+background-color: #e7e7e7;
+border: none;
+color: rgb(158, 155, 155);
+align-items: center;
+justify-content: center;
+font-size: 25px;
+font-weight: bold;
+border-radius: 10px;
+width: 100px;
+height: 60px;
+cursor: pointer;
+ }
+ .button:focus {
+ outline: none;
+ }
+ .server {
+ display: inline-block;
+ }
+ .btn {
+ border: none;
+ outline: none;
+ padding: 10px 10px;
+ background-color: #f1f1f1;
+ cursor: pointer;
+ font-size: 18px;
+ margin: 2px;
+ border-radius: 5px;
+ }
+ /* Style the active class, and buttons on mouse-over */
+ .active,
+ .btn:hover {
+ background-color: rgb(77, 79, 255);
+ color: white;
+ }
+ .button1 {
+ display: flex;
+ flex-direction: row;
+ border: none;
+ color: white;
+ align-items: center;
+ justify-content: center;
+ font-size: 20px;
+ font-weight: bold;
+ border-radius: 10px;
+ width: 1030px;
+ height: 60px;
+ cursor: pointer;
+ margin-top: 0.5%;
+ }
+ .button2 {
+ display: flex;
+ flex-direction: row;
+ background-color: Blue;
+ border: none;
+ color: white;
+ align-items: center;
+ justify-content: center;
+ font-size: 20px;
+ font-weight: bold;
+ border-radius: 10px;
+ width: 340px;
+ height: 30px;
+ cursor: pointer;
+ font-family: "Times New Roman", Times, serif;
+ text-decoration: underline;
+ }
+ .imgz {
+ flex-direction: row;
+ display: flex;
+ align-items: flex-start;
+ justify-content: right;
+ width: 120px;
+ margin-left: 20px;
+ }
+ .dropbtn {
+ display: flex;
+ flex-direction: row;
+ background-color: Blue;
+ border: none;
+ color: white;
+ align-items: center;
+ justify-content: center;
+ font-size: 20px;
+ font-weight: bold;
+ border-radius: 10px;
+ width: 515px;
+ height: 60px;
+ cursor: pointer;
+ font-family: "Times New Roman", Times, serif;
+ text-decoration: underline;
+}
+ .dropbtn:hover, .dropbtn:focus {
+ background-color: #2980B9;
+ }
+ .dropdown {
+    position: relative;
+ display: inline-block;
+ }
+ .dropdown-content {
+ display: none;
+ position: absolute;
+ background-color: #f1f1f1;
+ min-width: 160px;
+ overflow: auto;
+ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ z-index: 1;
+ }
+ .dropdown-content a {
+ color: black;
+ padding: 12px 16px;
+ text-decoration: none;
+ display: block;
+ font-size: 18px;
+ font-weight: normal;
+ }
+ .dropdown a:hover {background-color: #ddd;}
+ .show {display: block;}
+ .open-button {
+ background-color: #555;
+ color: white;
+ padding: 16px 20px;
+ border: none;
+ cursor: pointer;
+ opacity: 0.8;
+ position: fixed;
+ bottom: 23px;
+ right: 28px;
+ width: 280px;
+ }
+ /* The popup form - hidden by default */
+ .form-popup {
+ display: none;
+ position: fixed;
+ top: 23px;
+ bottom: 400px;
+ right: 100px;
+ width: 260px;
+ border: 3px solid #f1f1f1;
+ z-index: 9;
+ }
+ .form-container input[type=text]:focus, .form-container
+input[type=password]:focus {
+ background-color: #ddd;
+ outline: none;
+ }
+ /* Set a style for the submit/login button */
+ .form-container .btn {
+ background-color: #f8e918;
+ color: white;
+ padding: 16px 20px;
+ border: none;
+ cursor: pointer;
+ width: 100%;
+ margin-bottom:10px;
+ opacity: 0.8;
+ }
+ /* Add a red background color to the cancel button */
+ .form-container .cancel {
+ background-color: Blue;
+ }
+ /* Add some hover effects to buttons */
+ .form-container .btn:hover, .open-button:hover {
+ opacity: 1;
+ }
+ </style>
+</head>
+<body>
+ <div class ="block1" >
+ <p> REWES V1.0 </p>
+ <div class="imgz">
+ <img src="https://cdn.glitch.com/72508b62-879c-4bcd-9f45-
+847e6b54c5ea%2FlogoRE.jpg?v=1623406345951" width="200" height="65">
+ </div>
+ </div>
+ <div id="date" class ="block2">
+ </div>
+
+ <div id = "address" onclick="openForm()" class ="block3" >
+</div>
+<div id="server-status" class="server"></div>
+<div id="server-status-station" class="server"></div>
+
+<script>
+
+</script>
+<div id="stations"></div>
+<div class="block">
+<h1>Temp - Humi</h1>
+<div class="temp">
+<div class="tempVal" id="tempC"></div>
+<div class="tempO">o</div>
+<div class="tempUnit">C</div>
+</div>
+<div class="temp">
+<div class="tempVal" id="humi"></div>
+<div class="tempO"></div>
+<div class="tempUnit">%</div>
+</div>
+</div>
+<div class="block">
+<h1>Total Counts</h1>
+<div class="temp">
+<div class="tempVal" id="counts"></div>
+<div class="tempO"></div>
+<div class="tempUnit"></div>
+</div>
+</div>
+<div id = "blockusv" class="block">
+<h1>Cps - uSv</h1>
+<div class="temp">
+<div class="tempVal" id="cps"></div>
+<div class="tempO"></div>
+<div class="tempUnit">cps</div>
+</div>
+<div class="temp">
+<div class="tempVal" id="uSv"></div>
+<div class="tempO"></div>
+<div class="tempUnit">uSv/h</div>
+</div>
+</div>
+<div class="button1">
+    <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Data</button>
+    <div id="myDropdown" class="dropdown-content">
+    <a href="#" onclick="RedirectURL();return false;" target = "_blank">All
+   Data</a>
+    <a href="#" onclick="RedirectURLuSv();return false;" target = "_blank">uSv
+   &#62; 1</a>
+    <a href="#" onclick="RedirectURLuSv10();return false;" target = "_blank">uSv
+   &#62; 4</a>
+    </div>
+    </div>
+    <div class="tempS"></div>
+    <div class="tempUnit"></div>
+    <a href="https://charts.mongodb.com/charts-project-0-
+   reofm/public/dashboards/e1ba2640-4f76-4bc9-9975-ed2a194a9e22"
+   class="dropbtn" target = "_blank">Chart</a>
+    </div>
+   
+    <div class="button1">
+    <div>
+    <button id = "Storagebysec" onclick="openFormsec()" class="button2">Storage
+   data per sec</button>
+    </div>
+    <div class="tempS"></div>
+    <div class="tempUnit"></div>
+    <div>
+    <button id = "Storageby1min" onclick="openForm1min()"
+   class="button2">Storage data per 1min</button>
+    </div>
+    <div class="tempS"></div>
+    <div class="tempUnit"></div>
+    <div>
+    <button id = "Storageby5min" onclick="openForm5min()"
+   class="button2">Storage data per 5min</button>
+    </div>
+    </div>
+   
+    <div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+    <h1>Change address</h1>
+    <p>(enter password to confirm permission)</p>
+    <label for="psr"><b>Password</b></label>
+ <input type="text" id = "passw" placeholder="Enter Password" name="psr"
+required>
+ <label for="addr"><b>Address </b></label>
+ <input type="text" id = "addr" placeholder="Enter Address" name="addr"
+required>
+ <button type="button" class="btn" onclick="changename()">Change</button>
+ <button type="button" class="btn cancel"
+onclick="closeForm()">Close</button>
+ </form>
+</div>
+
+ <div class="form-popup" id="myFormsec">
+ <form action="/action_page.php" class="form-container">
+ <h1>Time Storage Data</h1>
+ <p>(enter password to confirm permission)</p>
+ <label for="psr"><b>Password</b></label>
+ <input type="text" id = "passsec" placeholder="Enter Password" name="psr"
+required>
+
+ <button type="button" class="btn" onclick="storagebysec()">Storage data per
+sec</button>
+ <button type="button" class="btn cancel"
+onclick="closeFormsec()">Close</button>
+ </form>
+</div>
+
+ <div class="form-popup" id="myForm1min">
+ <form action="/action_page.php" class="form-container">
+ <h1>Time Storage Data</h1>
+ <p>(enter password to confirm permission)</p>
+ <label for="psr"><b>Password</b></label>
+ <input type="text" id = "pass1min" placeholder="Enter Password" name="psr"
+required>
+
+ <button type="button" class="btn" onclick="storageby1min()">Storage data per
+1min</button>
+ <button type="button" class="btn cancel"
+onclick="closeForm1min()">Close</button>
+</form>
+</div>
+
+ <div class="form-popup" id="myForm5min">
+ <form action="/action_page.php" class="form-container">
+ <h1>Time Storage Data</h1>
+ <p>(enter password to confirm permission)</p>
+ <label for="psr"><b>Password</b></label>
+ <input type="text" id = "pass5min" placeholder="Enter Password" name="psr"
+required>
+
+ <button type="button" class="btn" onclick="storageby5min()">Storage data per
+5min</button>
+ <button type="button" class="btn cancel"
+onclick="closeForm5min()">Close</button>
+ </form>
+</div>
+
+ <script>
+ var stationID = "";
+ var socket = io();
+ var stationName = "";
+ var nameid = "";
+
+ function openForm() {
+ document.getElementById("myForm").style.display = "block";
+ }
+ function closeForm() {
+ document.getElementById("myForm").style.display = "none";
+ }
+
+ function openFormsec() {
+ document.getElementById("myFormsec").style.display = "block";
+ }
+
+ function closeFormsec() {
+ document.getElementById("myFormsec").style.display = "none";
+ }
+
+ function openForm1min() {
+ document.getElementById("myForm1min").style.display = "block";
+}
+
+function closeForm1min() {
+document.getElementById("myForm1min").style.display = "none";
+}
+
+function openForm5min() {
+document.getElementById("myForm5min").style.display = "block";
+}
+
+function closeForm5min() {
+document.getElementById("myForm5min").style.display = "none";
+}
+
+function myFunction() {
+document.getElementById("myDropdown").classList.toggle("show");
+}
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+if (!event.target.matches('.dropbtn')) {
+var dropdowns =
+document.getElementsByClassName("dropdown-content");
+var i;
+for (i = 0; i < dropdowns.length; i++) {
+var openDropdown = dropdowns[i];
+if (openDropdown.classList.contains('show')) {
+openDropdown.classList.remove('show');
+}
+}
+}
+}
+
+function RedirectURL(){
+window.location= createDynamicURL();
+}
+function createDynamicURL(){
+//The variable to be returned
+var URL;
+//Forming the variable to return
+URL="https://rewes1.glitch.me/";
+URL+= stationName;
+}
+
+ function closeForm1min() {
+ document.getElementById("myForm1min").style.display = "none";
+ }
+
+ function openForm5min() {
+ document.getElementById("myForm5min").style.display = "block";
+ }
+
+ function closeForm5min() {
+ document.getElementById("myForm5min").style.display = "none";
+ }
+
+ function myFunction() {
+ document.getElementById("myDropdown").classList.toggle("show");
+ }
+// Close the dropdown if the user clicks outside of it
+ window.onclick = function(event) {
+ if (!event.target.matches('.dropbtn')) {
+ var dropdowns =
+document.getElementsByClassName("dropdown-content");
+ var i;
+ for (i = 0; i < dropdowns.length; i++) {
+ var openDropdown = dropdowns[i];
+ if (openDropdown.classList.contains('show')) {
+ openDropdown.classList.remove('show');
+ }
+ }
+ }
+ }
+
+ function RedirectURL(){
+ window.location= createDynamicURL();
+ }
+ function createDynamicURL(){
+ //The variable to be returned
+ var URL;
+ //Forming the variable to return
+ URL="https://rewes1.glitch.me/";
+ URL+= stationName;
+ return URL;
+ }
+ function RedirectURLuSv(){
+ window.location= createDynamicURLuSv();
+ }
+ function createDynamicURLuSv(){
+ //The variable to be returned
+ var URLu;
+ //Forming the variable to return
+ URLu="https://rewes1.glitch.me/uSv/";
+ URLu+= stationName;
+ return URLu;
+ }
+ function RedirectURLuSv10(){
+ window.location= createDynamicURLuSv10();
+ }
+ function createDynamicURLuSv10(){
+ //The variable to be returned
+ var URLu10;
+ //Forming the variable to return
+ URLu10="https://rewes1.glitch.me/uSv10/";
+ URLu10+= stationName;
+ return URLu10;
+ }
+
+ function changename() {
+ var pass = document.getElementById("passw").value;
+ var name = document.getElementById("addr").value;
+ if(pass == "rewes2022"){
+ namec = {
+ namec:name,
+ nameid:nameid,
+ };
+ console.log(namec);//debug - báo bật
+ socket.emit("changename", namec);// gửi sự kiện "bật" đến Server
+ }
+ document.getElementById("myForm").style.display = "none";
+ }
+ function storagebysec() {
+ var pass = document.getElementById("passsec").value;
+ if(pass == "rewes2022"){
+ secid = {
+ nameid:nameid,
+ };
+ console.log(secid);//debug - báo bật
+ socket.emit("storagebysec", secid);// gửi sự kiện "bật" đến Server
+ }
+ document.getElementById("myFormsec").style.display = "none";
+
+ }
+
+ function storageby1min() {
+ var pass = document.getElementById("pass1min").value;
+ if(pass == "rewes2022"){
+ secid = {
+ nameid:nameid,
+ };
+ console.log(secid);//debug - báo bật
+ socket.emit("storageby1min", secid);// gửi sự kiện "bật" đến Server
+ }
+ document.getElementById("myForm1min").style.display = "none";
+ }
+ function storageby5min() {
+ var pass = document.getElementById("pass5min").value;
+ if(pass == "rewes2022"){
+ secid = {
+ nameid:nameid,
+ };
+ console.log(secid);//debug - báo bật
+ socket.emit("storageby5min", secid);// gửi sự kiện "bật" đến Server
+ }
+ document.getElementById("myForm5min").style.display = "none";
+
+ }
+
+ function dongho() {
+ var today = new Date();
+ var day = today.getDate()
+ var month = today.getMonth() + 1;
+ if (month < 10) {
+ month = "0" + month;
+}
+ if (day < 10) {
+ day = "0" + day;
+ }
+ var date = day + '-' + month + '-' + today.getFullYear();
+ var gio = today.getHours();
+ var phut = today.getMinutes();
+ var giay = today.getSeconds();
+ if (gio < 10)
+ gio = "0" + gio;
+ if (phut < 10)
+ phut = "0" + phut;
+ if (giay < 10)
+ giay = "0" + giay;
+ var time = gio + ":" + phut + ":" + giay;
+ var dateTime = date + " " + time;
+ setTimeout("dongho()", 1000);
+ }
+ dongho();
+ socket.on("stations", msg => {
+ $("#stations").empty();
+ console.log(msg);
+ msg.forEach(element => {
+ let isActiveTxt = element.id === stationID ? "active" : "";
+ let txt = $(`<button id=${element.id} class="btn
+${isActiveTxt}"></button>`).text(element.name);
+ $("#stations").append(txt);
+ $(`#${element.id}`).click(function() {
+ stationID = element.id;
+ console.log(element.name);
+ socket.emit("join-room", element.id);
+ let current = document.getElementsByClassName("active");
+ console.log(current);
+ if (current.length > 0) {
+ current[0].className = current[0].className.replace("active", "");
+ }
+ $(`#${element.id}`).addClass("active")
+ stationName = element.name;
+ nameid = stationID;
+ })
+ });
+ })
+ socket.on('temp2web', (msg) => {
+ $('#tempC').text(msg.tempC);
+ $('#humi').text(msg.humi);
+ $('#cps').text(msg.cps);
+ $('#uSv').text(msg.uSv);
+ $('#counts').text(msg.counts);
+ $('#server-status-station').text(msg.statusStation);
+ $('#date').text(msg.date);
+ $('#address').text(msg.address);
+ if(msg.wr == 0)
+ {
+ document.getElementById("Storagebysec").style.backgroundColor =
+"#1E90FF";
+ document.getElementById("Storageby1min").style.backgroundColor =
+"Blue";
+ document.getElementById("Storageby5min").style.backgroundColor =
+"Blue";
+ }
+ else if(msg.wr == 1)
+ {
+ document.getElementById("Storagebysec").style.backgroundColor =
+"Blue";
+ document.getElementById("Storageby1min").style.backgroundColor =
+"#1E90FF";
+ document.getElementById("Storageby5min").style.backgroundColor =
+"Blue";
+ }
+ else if(msg.wr == 5)
+ {
+ document.getElementById("Storagebysec").style.backgroundColor =
+"Blue";
+ document.getElementById("Storageby1min").style.backgroundColor =
+"Blue";
+ document.getElementById("Storageby5min").style.backgroundColor =
+"#1E90FF";
+ }
+ if(msg.uSv > "1")
+ {
+ document.getElementById("blockusv").style.backgroundColor =
+"#FFA07A";
+ }
+ else{
+    document.getElementById("blockusv").style.backgroundColor =
+"#f8e918";
+ }
+ })
+ socket.on("connect", () => {
+ console.log("user ", socket.id, " connected");
+ $("#server-status").text("Server connected")
+ });
+ socket.on("disconnect", () => {
+ console.log("user ", socket.id, " disconnected");
+ $("#server-status").text("Server disconnected");
+ $("#stations").empty();
+ $('#tempC').text("");
+ $('#cps').text("");
+ $('#uSv').text("");
+ $('#humi').text("");
+ $('#counts').text("");
+ $('#address').text("");
+ $('#date').text("");
+ document.getElementById("Storagebysec").style.backgroundColor =
+"Blue";
+ document.getElementById("Storageby1min").style.backgroundColor =
+"Blue";
+ document.getElementById("Storageby5min").style.backgroundColor =
+"Blue";
+ document.getElementById("blockusv").style.backgroundColor =
+"#f8e918";
+ });
+ </script>
+</body>
+</html>

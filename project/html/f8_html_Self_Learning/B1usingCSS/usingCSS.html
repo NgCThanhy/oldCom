@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sử dụng CSS</title>
+        <meta charset="utf-8">
+
+        <!-- thông thường thì phần 1 và 2 sẽ để ở trên phần <head> nhưng bây h để dưới để vd -->
+
+    </head>
+        
+    <body>
+        <h1>Sử dụng CSS</h1>
+        <p>
+            có 3 cách sử dụng CSS trong html
+            <ol>
+                <li>Internal</li>
+                <li>External</li>
+                <li>Inline</li>
+            </ol>
+        </p>
+
+        <!--
+        ngoài cách truy cập bằng thẻ như trên thì ta có thể gán cho nó id và class
+        với id sẽ hỗ trợ sử dụng css cho một đối tượng cụ thể => id ko nên trùng nhau
+        với class sẽ dùng cho nhìu đối tượng một lúc => có thể dùng cho nhìu đối tượng
+        và có thể dùng <div> để set up lớp con.
+        một thẻ có thể có nhìu class, mỗi class cách nhau = dấu cách
+        -->
+
+            <ul>
+                <li id="first">id nà</li>
+                <li id="second">id nà</li>
+                <li class="a">class nà</li>
+                <li class="a">class nà</li>
+                <li class="a">class nà</li>
+            </ul>
+
+        <!--1 Internal: sử dụng thẻ <style> và có thể để thẻ này tại bất cứ đâu trong file html
+            => bên trong html -->
+        <style>
+            p {
+                color: red;
+                font-size: 20px;
+            }
+            #first { /* sử dụng # cho id */
+                color: brown;
+            }
+            .a { /* sử dụng . cho class*/
+                color: blue;
+            }
+        </style>
+
+        <!-- 2 External: sử dụng các CSS bằng một file .css bên ngoài file html
+        => cần <link> vào với href là đường dẫn đến file .css-->
+        <link rel="stylesheet" href="main.css"> <!--do file main.css ở cùng folder với file .htlm nên ghi tên là ok-->
+
+        <!-- 3 Inline: viết trực tiếp vào như là 1 attribute của thẻ -->
+        <h2 style="color: blueviolet; font-size: 40px;">viết Inline</h2>
+
+        <table>
+            <thead>
+                
+                <a href="https://www.w3schools.com/cssref/css_selectors.asp"> <h2 title="xem thêm các selection khác" style="color: chartreuse; font-size: 30px;">CSS selectors cơ bản</h2></a>
+                <th>Selector</th>
+                <th>Ví dụ</th>
+                <th>Mô tả</th>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>.class</td>
+                    <td>.intro</td>
+                    <td>Chọn tất cả các thẻ có class="intro"</td>
+                </tr>
+                <tr>
+                    <td>.class1.class2</td>
+                    <td>.name1.name2</td>
+                    <td>Chọn tất cả các thẻ có cả name1 và name2 được đặt trong thuộc tính class của nó</td>
+                </tr>
+                <tr>
+                    <td>.class1 .class2</td>
+                    <td>.name1 .name2</td>
+                    <td>Chọn tất cả các thẻ có class="name2" là con của một phần tử có class="name1"</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>*</td>
+                    <td>Chọn tất cả các thẻ</td>
+                </tr>
+                <tr>
+                    <td>element</td>
+                    <td>h2</td>
+                    <td>Chọn tất cả các thẻ h2</td>
+                </tr>
+                <tr>
+                    <td>element.class</td>
+                    <td>div.box </td>
+                    <td>Chọn tất cả thẻ div có class="box"</td>
+                </tr>
+                <tr>
+                    <td>element, element</td>
+                    <td>div, h2</td>
+                    <td>Chọn tất cả thẻ div và h2</td>
+                </tr>
+                <tr>
+                    <td>element element</td>
+                    <td>div p</td>
+                    <td>Chọn tất cả thẻ p trong thẻ div</td>
+                </tr>
+                <tr>
+                    <td>element > element</td>
+                    <td>div > p</td>
+                    <td>Chọn tất cả thẻ p là con trực tiếp của thẻ div</td>
+                </tr>
+                <tr>
+                    <td>element + element</td>
+                    <td>div + p</td>
+                    <td>Chọn thẻ p đứng liền kề sau thẻ div</td>
+                </tr>
+                <tr>
+                    <td>element ~ element</td>
+                    <td>div ~ p</td>
+                    <td>Chọn tất cả thẻ p đứng sau thẻ div</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <div>
+            <h3>Priority</h3> 
+            <p>
+                độ ưu tiên của css các thẻ trong html:
+                - Internal = External => cái nào khai báo sau thì sẽ xóa cái trước
+                - !important > Inline > #id > .class > tag > *
+                phần cụ thể sẽ ưu tiên hơn vd thẻ có id và class sẽ ưu tiên hơn chỉ có id
+
+                ngoài ra thì các css còn có tính kế thừ từ thẻ cha (vd thẻ <div>) cho thẻ con (thẻ <p>)
+                
+            </p>
+
+        </div>
+        
+    </body>
+</html>

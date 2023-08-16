@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Font Awesome</title>
+        <meta charset="utf-8">
+        <!-- nhúng icon: -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    </head>
+    <body>
+        <h1>Font Awesome</h1>
+        <ul>
+            <li>
+                <h3>đặt vấn đề</h3>
+                <p>nếu ta muốn chèn một icon và wed để nhìn cho đẹp thì ta có thể dùng thẻ img để đưa vào hoặc gán css background hình ảnh vào <br/>
+                    tuy nhiên khi dùng hình ảnh thì cần phải tải một khoảng khá là lâu làm tốc độ load wed bị chậm. <br/>
+                    ngoài ra hình ảnh cũng ko thể thay đổi màu sắc, kích thước cho đẹp đc <br/>
+                    => sài ko ổn <br/>
+                    => người ta thường dùng Font Awesome để tránh đc những nhược điểm đó
+                </p>
+            </li>
+
+            <li>
+                <h3>Font Awesome</h3>
+                <p>Font Awesome là là một thư viện chứa các font chữ ký hiệu hay sử dụng trong website. <br/>
+                    Font chữ ký hiệu ở đây chính là các icons mà ta thường hay sử dụng trong các layout website. <br/>
+                    - chỉ cần load một file CSS, một file Font và chỉ load một lần duy nhất nên tốc độ sẽ được cải thiện đáng kể. <br/>
+                    - với Font Awesome thì bạn dễ dàng thay đổi kích thước và màu của icon bằng những thuộc tính CSS thông thường của font chữ như color, font-size <br/>
+                    hay bất kì một thuộc tính CSS nào khác dành cho Font chữ.
+
+                </p>
+            </li>
+
+            <li>
+                <h3>hướng dẫn sử dụng</h3>
+                <ol>
+                    <li>Download Font Awesome và nhúng vào Layout
+                        <p>- Để sử dụng được Font Awesome thì phải <a href="https://fontawesome.com/download">download thư viện</a> của nó về <br/>
+                            sau đó add file .all.min.css vào: < link rel="stylesheet" href="css/font-awesome.min.css" /> <br/>
+                            <br/>
+                            - hoặc sử dụng link CDN mà nó cung cấp cho <a href="https://cdnjs.com/libraries/font-awesome">trong đây</a> (lấy cái .all.min phiên bản cuối á): <br/>
+                            có kiểu như vầy: < link rel="stylesheet" href="...."> và đặt lên phần head
+                        </p>
+                    </li>
+
+                    <li>Tham khảo các class tạo ICON có sẵn của Font Awesome
+                        <p>vào <a href="https://fontawesome.com/icons" >Font Awesome > icon</a> để tìm và chon icon ưng ý <br/>
+                            à do nghèo nên sài cái free thôi nhá
+                        </p>
+                    </li>
+
+                    <li>Sử dụng Font Awesome
+                        <p>sau khi chọn đc icon thì ấn vào và copy thẻ i và dán vào file html: <br/>
+                            < i class="fa-regular fa-check-double"></i>
+                        </p>
+                    </li>
+
+                </ol>
+            </li>
+
+            <li>
+                <h3>sử dụng nâng cao</h3>
+                <p>ngoài việc thêm icon vào thì ta có thể tùy chỉnh icon thông qua việc thêm các class vào:</p>
+                <ol>
+                    với icon thông thường: <i class="fa-solid fa-ghost"></i>
+                    
+                    <li>
+                        <h4>Tạo icon lớn:</h4>
+                        <p>Để tăng kích thước của các icons thì sử dụng các class fa-lg, class này sẽ tăng 33% so với kích thước mặc đinh ban đầu. <br/>
+                            Hoặc có thể sử dụng các class fa-2x, fa-3x, fa-4x, fa-5x ... fa-10x để tăng theo tỷ lệ tương ứng với tên class. <br/>
+                            <i class="fa-solid fa-ghost fa-lg"></i> fa-lg ......
+                            <i class="fa-solid fa-ghost fa-2x"></i> fa-2x ......
+                            <i class="fa-solid fa-ghost fa-3x"></i> fa-3x ......
+                            <i class="fa-solid fa-ghost fa-4x"></i> fa-4x
+                        </p>
+                    </li>
+
+                    <li>
+                        <h4>Thêm Border và Pulled cho icon:</h4>
+                        <p>tương tự thì ta lại thêm class fa-border, fa-pull-right và fa-pull-left cho icon <br/>
+                            với vd tương ứng: <br/>
+                            - fa-border <br/>
+                            - fa-pull-right <br/>
+                            - fa-border fa-pull-left <br/>
+                        </p>
+
+                        <style>
+                            .test {
+                                width: 240px;
+                                background-color: chartreuse;
+                                display: inline-block;
+                                margin-left: 32px;
+                                padding: 10px;
+                                border: 2px dotted black;
+                            }
+                        </style>
+                        
+                        <p class="test">
+                            <i class="fa-solid fa-ghost fa-4x fa-border"></i>
+                            Triết học Marx-Lenin hình thành dựa trên hệ thống quan điểm của Marx, Engels và được Lenin bổ sung sau này. Trong đó Engels đã phát triển triết học Marx, thông qua việc khái quát các thành tựu khoa học và phê phán các lý thuyết triết học duy tâm, siêu hình và cả những quan niệm duy vật tầm thường
+                        </p>
+
+                        <p class="test">
+                            <i class="fa-solid fa-ghost fa-4x fa-pull-right"></i>
+                            Triết học Marx-Lenin hình thành dựa trên hệ thống quan điểm của Marx, Engels và được Lenin bổ sung sau này. Trong đó Engels đã phát triển triết học Marx, thông qua việc khái quát các thành tựu khoa học và phê phán các lý thuyết triết học duy tâm, siêu hình và cả những quan niệm duy vật tầm thường
+                        </p>
+                        
+                        <p class="test">
+                            <i class="fa-solid fa-ghost fa-4x fa-border fa-pull-left"></i>
+                            Triết học Marx-Lenin hình thành dựa trên hệ thống quan điểm của Marx, Engels và được Lenin bổ sung sau này. Trong đó Engels đã phát triển triết học Marx, thông qua việc khái quát các thành tựu khoa học và phê phán các lý thuyết triết học duy tâm, siêu hình và cả những quan niệm duy vật tầm thường
+                        </p>
+
+                    </li>
+
+                    <li>
+                        <h4> icon động:</h4>
+                        <p>
+                            <i class="fa-solid fa-ghost fa-3x fa-spin"></i> ........... fa-spin xoay tròn<br/>
+                            <i class="fa-solid fa-ghost fa-3x fa-pulse"></i> ........... fa-pulse xoay 8 bước<br/>
+                        </p>
+
+                    </li>
+
+                    <li>
+                        <h4>xoay icon:</h4>
+                        <p>
+                            <i class="fa-solid fa-ghost fa-2x fa-rotate-90"></i> fa-rotate-90<br>
+                            <i class="fa-solid fa-ghost fa-2x fa-rotate-180"></i> fa-rotate-180<br>
+                            <i class="fa-solid fa-ghost fa-2x fa-rotate-270"></i> fa-rotate-270<br>
+                            <i class="fa-solid fa-ghost fa-2x fa-flip-vertical"></i> icon-flip-vertical<br>
+                            <i class="fa-solid fa-video fa-2x"></i> normal<br>
+                            <i class="fa-solid fa-video fa-2x fa-flip-horizontal"></i> fa-flip-horizontal
+                        </p>
+
+                    </li>
+
+                    <li>
+                        <h4>tạo một icon từ nhiều icons:</h4>
+                        <p>
+                            Để làm được điều này ban phải tạo một thẻ < span> ở ngoài và bên trong là danh sách các thẻ i. <br/>
+                             - Thẻ ngoài cùng gọi là thẻ cha và nó phải có class fa-stack, <br/>
+                             - còn thẻ i bên trong là một icon bình thường như ở trên.
+
+                        </p>
+
+                        <p>
+                            <i class="fa-regular fa-circle"></i> hình tròn<br/>
+                            <i class="fa-solid fa-backward"></i> hình mũi tên<br/>
+                            <span class="fa-stack fa-lg">
+                                <i class="fa-regular fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid fa-backward fa-stack-1x"></i>
+                            </span>
+                            fa-backward trên fa-circle
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-circle"></i> hình tròn<br/>
+                            <i class="fa-solid fa-backward"></i> hình mũi tên<br/>
+                            <span class="fa-stack fa-lg">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid fa-backward fa-stack-1x fa-inverse"></i>
+                            </span>
+                            fa-backward trên fa-circle
+                        </p>
+
+                        <p>
+                            <i class="fa fa-camera "></i><br/> 
+                            <i class="fa fa-ban "></i><br/>
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-camera fa-stack-1x"></i>
+                                <i class="fa fa-ban fa-stack-2x text-danger"></i>
+                            </span>
+                            fa-ban trên fa-camera
+                        </p>
+
+                    </li>
+
+                    <li>
+                        <h4>Thêm Icon với thuộc tính after và before:</h4>
+                        <p>
+                            ta có thể dùng để thêm vào :)
+                        </p>
+
+                    </li>
+
+
+                </ol>
+            </li>
+
+        </ul>
+    </body>
+</html>

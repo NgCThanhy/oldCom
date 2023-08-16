@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sử dụng tag meta </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <h1>HTML < meta > Tag</h1>
+        <p> Thẻ < meta > xác định metadata của 1 file HTML. metadata là dữ liệu (thông tin) về data. </p>
+        <p> < meta > tag luôn nằm bên trong phần < head > và thường được sử dụng để chỉ định bộ ký tự, mô tả trang, từ khóa, tác giả của tài liệu và cài đặt chế độ xem. </p>
+        <p> Metadata  sẽ không được hiển thị trên trang, nhưng máy có thể phân tích cú pháp. </p>
+        <p> Metadata  được sử dụng bởi trình duyệt (cách hiển thị nội dung hoặc tải lại trang), công cụ tìm kiếm (từ khóa) và các dịch vụ web khác. </p>
+
+        <ol>
+            <h2>một số thẻ meta:</h2>
+            chi tiết cụ thể thì <a style="text-decoration: none;" href="https://carly.com.vn/blog/the-meta/">xem tại đây</a>
+
+            <li>
+                <h3>Title:</h3>
+                 
+                <p>là thẻ dùng làm tiêu đề trên thanh tìm kiếm cũng như trên thanh tag <br/>
+                    cú pháp: <br/>
+                    < title> tiêu đề < /title>
+                </p>
+                <img src="https://carly.com.vn/media/1125/tieu-de-trong-ket-qua-tim-kiem-kinh-nghiem-phuot.jpg?width=500&height=352.04918032786884" alt="trên google">
+                <img src="https://carly.com.vn/media/1126/noi-dung-title-tren-cua-so-trinh-duyet.jpg?width=500&height=116.58031088082902" alt="trên tag">
+                <ul>
+                    <a href="https://carly.com.vn/blog/the-title-la-gi/">có 4 điều chú ý khi sử dụng title: </a>
+                    <li>độ dài khoảng từ 60-70 ký tự (nếu ít hơn sẽ bị thêm vào nếu nhìu hơn sẽ bị cắt bớt)</li>
+                    <li>có chứa 1 lần từ khóa chính (nhiều lần hơn sẽ gặp lỗi spam )</li>
+                    <li>phải là một cụm từ có ý nghĩa, khái quát được nội dung của wed đó</li>
+                    <li>hấp dẫn được người đọc, bằng cách áp dụng các thủ pháp sáng tạo</li>
+                </ul>
+            </li>
+
+            <li>
+                <h3> < meta name="description">:</h3> 
+                <p>description thì sẽ tóm tắt wed :) với đặc trưng là sẽ in đậm những từ mà có trong những từ khóa người dùng nhập<br/>
+                    => sử dụng để lôi kéo người dùng
+                    cú pháp: <br/>
+                    < meta name="description" content="...">
+                </p>
+
+                <img src="https://carly.com.vn/media/1138/meta-description-tren-serp.jpg?width=500&height=284.4183564567769" alt="trên google">
+                <img src="https://carly.com.vn/media/1140/meta-description-khi-chia-se-tren-facebook.jpg?width=500&height=241.32492113564666" alt="khi gán url">
+
+                <ul>
+                    <a href="https://carly.com.vn/blog/meta-description-la-gi/#meta-description-la-gi">một số lưu ý khi dùng description: </a>
+                    
+                    <li>độ dài khoản từ 150-160 ký tự (mặc dù đôi khi google cho phép lên đến 300)</li>
+                    <li>mô tả đúng chủ đề trang (tất nhiên)</li>
+                    <li>nội dung lôi cuốn</li>
+                    <li>chứa từ khóa chính, nên dùng càng gần đầu càng tốt nhưng ko spam (max 2 lần và nên dùng từ đồng nghĩa) </li>
+                    <li>tránh trùng lặp => mỗi wed nên có 1 description riêng</li>
+                    <li>ko dùng đấu "" và cân nhắc sử dụng các kiểu dữ liệu có cấu trúc khác </li>
+                </ul>
+            
+            </li>
+
+            <li>
+                <h3> meta content-type  hay < meta charset=""> </h3>
+                <p> có tác dụng xác định kiểu mã hóa ký tự <br/>
+                    => sử dụng đc tiếng việt
+                    cú pháp: <br/>
+                    < meta charset="utf-8"> 
+                </p>
+
+            </li>
+
+            <li>
+                <h3> meta viewport </h3>
+                <p> có tác dụng hướng dẫn trình duyệt wed điều khiển kích thước (dimentions) hay tỷ lệ phóng (scaling) để tối ưu wed cho nhiều thiết bị. <br/>
+                    => sử dụng đc tiếng việt
+                    cú pháp để sử dụng dễ dàng trên điện thoại: <br/>
+                    < meta name="viewport" content="width=device-width, initial-scale=1"> <br/>
+                    với phần content có ý nghĩa như sau:
+                    <u>
+
+                        <li>width=device-width => điều chỉnh sao cho độ rộng màn hình khớp với số pixel của thiết bị</li>
+                        <li>initial-scale=1 => tỉ lệ phóng ban đầu giữa pixel css và pixel màn hình là 1:1</li>
+                    </u>
+                </p>
+
+            </li>
+
+            <li>
+                <h3> meta social</h3>
+                <p>thẻ này giúp cho việc kết nối đến các mạng xã hội khác tốt hơn <br/>
+                    <a href="https://carly.com.vn/blog/the-meta-open-graph/"> thẻ meta open graph</a>
+                </p>
+            </li>
+
+            <li>
+                <h3> meta robot</h3>
+                <p> trong thực tế thì google có sử dụng các con bot (googlebot) để đưa vào các wed để thu thập thông tin giúp google có thể cập nhật thêm những chỉ mục mới cũng như wed mới<br/>
+                    và nếu như chúng ta ko muốn bị google nhòm ngó <br/>
+                    => thì nên chặn lại bằng thẻ này cũng như <a href="https://carly.com.vn/blog/file-robots-txt-la-gi/">file robots.txt</a>
+                </p>
+            </li>
+
+            <li>
+                <h3> meta language</h3>
+                <p> giúp khai báo về loại <a href="https://www.w3schools.com/tags/ref_language_codes.asp">ngôn ngữ sử dụng trong wed</a><br/>
+                    cú pháp cho tiếng việt: <br/>
+                    < html lang="vn" >
+                </p>
+            </li>
+
+            <li>
+                <h3> meta geo</h3>
+                <p> giúp khai báo về vị trí địa lý cụ thể giúp định hướng khách hàng trong khu vực 
+                    cú pháp: <br/>
+                    lên mạng tra cho nhanh
+                </p>
+            </li>
+
+
+        </ol>
+    </body>
+</html>

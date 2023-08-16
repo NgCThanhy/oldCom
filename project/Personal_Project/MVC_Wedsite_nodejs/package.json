@@ -1,0 +1,26 @@
+{
+  "name": "mvc_wed",
+  "version": "1.0.0",
+  "description": "my project",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect ./src/index.js",
+    "watch": "sass --watch src/resources/scss/app.scss:src/public/css/app.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "honkai"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.4",
+    "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
+    "sass": "^1.60.0"
+  }
+}

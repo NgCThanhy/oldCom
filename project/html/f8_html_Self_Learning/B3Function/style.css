@@ -1,0 +1,26 @@
+.box {
+    width: calc(100% - 160px);
+    height: 5rem;  /* tương ứng với 50px*/
+    background-color: red;
+}
+
+ul {
+    font-size: 2rem;
+}
+
+#var {
+    --variable : red;
+    color: var(--variable);
+}
+
+#rgba {
+    color: rgba(21, 18, 43, 0.3);
+}
+
+#rgb {
+    color: rgb(3, 185, 42);
+}
+
+a::after{
+    content: "(" attr(href) ")"; /*bây h khi sửa href của thẻ <a> thì bên trong () sẽ đc sửa theo*/
+}

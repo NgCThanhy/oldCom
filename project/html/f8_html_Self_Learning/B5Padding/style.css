@@ -1,0 +1,33 @@
+.box::before{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    content: "box";
+    display: block;
+}
+
+.Inbox {
+    width: 50px;
+    height: 50px;
+    background-color: navy;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+/*
+    ngoài ra có thể viết tắt:
+        - padding: 10px; => cả 4 chiều là 10px
+        - padding: 10px 11px; => trên dưới = 10; trái phải = 11
+        - padding: 10px 11px 12px; => trên = 10; trái phải = 11; dưới = 12
+        - padding: 10px 11px 12px 13px; => trên trái dưới phải
+*/
+}
+
+.box::after{
+    width: 50px;
+    height: 50px;
+    background-color: yellowgreen;
+    content: "box";
+    display: block;
+}
+

@@ -1,0 +1,45 @@
+#R-1 {
+    font-size: 100%;
+    color: brown;
+}
+
+#R-2 {
+    font-size: 1rem;
+    color: blue;
+}
+
+#R-3 {
+    font-size: 1em;
+    color: yellow;
+}
+
+#R-4 {
+    font-size: 10vw;
+    color: red;
+}
+
+#R-5 {
+    font-size: 10vh;
+    color: green;
+}
+
+.box {
+    width: 100%; /* khi cho là 100% => là dựa theo thẻ body chứa nó mà thẻ body lại kế thừa lại kích thước của trình duyệt
+    tuy nhiên ta lại thấy có 1 khoảng trắng nhỏ ở 2 bên của box dù là 100%
+    => đó là thuộc tính margin - là một thuộc tính mặc định của trong css của một số thẻ 
+    nó có tác dụng sẽ tạo khoảng cách giữa các thẻ với trong trường hợp này là của thẻ body có margin: 8px
+    => body đang đẩy ra xung quanh 8px và gây ra hiện tượng trên   */
+
+    height: 10px; /* Với chiều cao, mặc định các thẻ có height: auto, 
+    chiều cao sẽ tự động thay đổi khi nội dung bên trong nó tăng lên. 
+    Nếu thẻ cha có height: auto và thẻ con của nó height: 50% thì sẽ không có tác dụng,
+    khi ấy thẻ con vẫn có height: auto. 
+     =>Vì vậy, để một thẻ có thể đặt height theo % thì thẻ nó phụ thuộc phải có một chiều cao mang tính cố định.*/
+    
+     background-color: brown;
+}
+
+* { 
+    margin: 0; /* Loại bỏ margin mặc định */
+    padding: 0; /* Loại bỏ padding mặc định là các dấu - đầu dòng á*/
+}

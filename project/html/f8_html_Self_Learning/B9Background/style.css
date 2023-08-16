@@ -1,0 +1,101 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    padding: 10px;
+    border: 10px dashed red ;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    /* như đã biết thì khi sử dụng box-sizing: border-box thì nó sẽ trừ đi phần content để làm gọn box lại
+    thì thông thường thì phần border sẽ nằm lên trên phần padding và content
+    => nếu ko mún v thì dùng background-clip: 
+        border-box : mặc định (là như cũ á méo có gì hot)
+        padding-box : sẽ đưa phần border ra khỏi padding (hay là tách bạch phần padding cho dễ nhìn)
+        content-box : sẽ tách bạch phần content ra lun (khỏi cả padding)
+    */
+    background-clip: content-box;
+    /*đối với image thì sài background-origin: tương tự với clip ;
+*/
+}
+
+.jpg {
+    float: left;
+    margin: 20px;
+    color: red;
+    background-color: aqua;
+}
+
+.image1 {
+    width: 30rem;
+    height: 45.6rem;
+    background-image: url(https://comicvine.gamespot.com/a/uploads/scale_small/11145/111450787/8489335-3334854004-71tbJ.jpg);
+    background-size: 90% ; /*kích thước sẽ ko lớn quá so với kích thước của image1 (300x456)*/ 
+    /* với size: có thể đưa vào 2 chỉ số tương đương vs dài và cao. nếu chỉ nhập 1 chỉ số thì chiều cao sẽ là auto 
+        ngoài ra nếu ko muốn sài đơn vị như trên thì có thể sử dụng keyword:
+            contain sẽ lấy chiều bức ảnh dài nhất làm 100% phần còn lại auto sao cho ko bị che hay cắt xén
+            corver tương tự contain nhưng chấp nhận việc che khất ảnh để đánh đổi việc làm full nền*/
+    background-repeat: no-repeat; /* nếu background-size nhỏ hơn so với kích thước của image1 thì sẽ tự động lặp lại
+    => nếu ko muốn thì no-repeat :) */
+    
+    /* 
+    ngoài ra nếu size < box thì có thể thấy rõ rằng vị trí của bức ảnh trong box : góc trên bên trái
+    => đặt góc o tại đó và vector x chỉ xuống, y chỉ sang phải 
+    sử dụng background-position để điều chỉnh vị trí của ảnh :
+        có 2 chỉ số x y có thể đưa vào bằng keyword hoặc chỉ số
+        y mặc định là center 
+    */
+    background-position: right 20px bottom 10px; /* viết kiểu này nghĩa là đặt bức ảnh tại vị trí cách cạnh phải 20px và  cách cạnh đáy 10px*/
+
+}
+
+.image2 {
+    width: 533px;
+    height: 300px;
+    /* trong background-image thì có thể có nhiều ulr() và cách nhau bởi dấu "," ảnh nào viết trước thì đc nằm ở trên */
+    background-image:  
+        url(https://cdn.shopify.com/s/files/1/0337/4179/9557/files/monogatari_02_shoesfv_logo_td0U09G9epTT.png?v=1627638718),
+        url(https://rare-gallery.com/thumbs/4581827-long-hair-sitting-monogatari-series-oshino-shinobu-selective-coloring-yellow-eyes-anime-girls-katana-feathers.jpg);
+    background-size: 100%;
+}
+
+.image3 {
+    width: 50px;
+    height: 100px;
+    /*ngoài việc lấy hình ảnh làm nền thì ta có thể sử dụng màu chuyển*/
+    background-image: linear-gradient(0, #fff, rgb(116, 194, 247));
+    /* với cú pháp: truyền vào tham số:
+        hướng xoay của dãy màu chuyển 0 - 360
+        màu 1
+        màu 2
+    */
+}
+
+.image4 {
+    width: 200px;
+    height: 400px;
+    /* và việc repeat cũng có thể ứng dụng bằng các loại hình ảnh có thể lặp đc (repeat background stock image) */
+    background-image:
+    linear-gradient(0, rgba(201, 201, 25, 0.4), rgba(38, 112, 155, 0.4)), 
+    url(https://as1.ftcdn.net/v2/jpg/00/77/30/10/1000_F_77301075_lzZOecCg5Xr3nopWKPFg89YcGKTfPNU1.jpg)
+    ;
+    background-size: 60%;
+}
+
+.imagex {
+    width: 200px;
+    height: 200px;
+    /* viết ngắn gọn các thuộc tính của background: 
+        - color
+        - url()
+        - repeat
+        - position 
+        - size (nhớ "/" ở trước size)
+        */
+    background: 
+        rgb(122, 200, 206)
+        url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbdVj4uo-JCNSdUooxe3LmQkFmflP3lFeXDC0OWIZ43g&s)
+        top center /70% no-repeat
+
+    ;
+
+}

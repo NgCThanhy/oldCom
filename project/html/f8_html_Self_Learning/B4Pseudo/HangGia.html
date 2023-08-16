@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pseudo</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Pseudo class</h1>
+        <p>cấu trúc của một lớp giả là: <br/> <!--br là xuống dòng-->
+            :< tên lớp giả > <br/>
+            lớp giả có tác dụng là truy suất đến một đối tượng cụ thể để thao tác trên đó. dưới dây là một số lớp giả
+            chuyên dùng. nên google để tìm hiểu thêm 
+        </p>
+        <ul>
+            <li>:root => sẽ tham chiếu đến phần tử gốc của file html => là thẻ < html> </li>
+            <p>vd như khi muốn tạo một biến bên trong thẻ html chẳng hạn</p>
+            <li id="hover">:hover => thẻ nào được tham chiếu đến sẽ kích hoạt khối lệnh bên trong khi có di chuyển chuột đến nó </li>
+            <li id="active">:active =>  thẻ nào được tham chiếu đến sẽ kích hoạt khối lệnh bên trong khi nhấp chuột vào nó </li>
+            <li id="fchild">:first-child => sẽ tham chiếu đến phần tử con đầu tiên của một thẻ </li>
+            <li id="lchild">:last-child => sẽ tham chiếu đến phần tử con cuối cùng của một thẻ </li>
+            <li>test phần tử cuối</li>
+        </ul>
+
+        <h1>Pseudo element</h1>
+        <p>cấu trúc thì y như lớp giả nhưng dùng dấu :: <br/>
+            phần tử giả thì có thể dùng để tạo ra những phần tử hiển thị trên wed mà ko cần viết html mà chỉ cần viết css thui
+        </p>
+        <ul>
+            <li>::before => thêm vào trước</li>
+            <li>::after => thêm vào cuối</li>
+            <li id="fletter">::first-letter => ký tự đầu</li>
+            <li id="fline">::first-line => đòng đầu </li>
+            <li id="selection">::selection => khi chọn khối lại</li>
+        </ul> 
+        <p>vd cho 1 cái box sau đó tạo thêm một vài box vào bên trong nó</p>
+        <div class="box">
+            <div class="boxIn"></div> <!--đây là cách tạo thông thường-->
+        </div>
+
+
+    </body>
+</html>

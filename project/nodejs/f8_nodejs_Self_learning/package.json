@@ -1,0 +1,35 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "a blog to self learning nodejs",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --inspect src/index.js",
+    "watch": "sass --watch src/resources/scss/app.scss:src/public/css/app.css",
+
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NgCThanhy/f8_nodejs_self_learning.git"
+  },
+  "keywords": [
+    "f8",
+    "blog"
+  ],
+  "author": "yami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NgCThanhy/f8_nodejs_self_learning/issues"
+  },
+  "homepage": "https://github.com/NgCThanhy/f8_nodejs_self_learning#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.4"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.21",
+    "sass": "^1.59.3"
+  }
+}

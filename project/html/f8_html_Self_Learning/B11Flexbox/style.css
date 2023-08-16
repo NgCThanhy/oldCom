@@ -1,0 +1,253 @@
+
+
+/* thanh navbar */
+.nav {
+    min-height: 42px; /*sẽ có chiều ngang 100% và chiều dọc >= 42px tùy theo phần content
+    => viết v tiện vãi*/
+    background-color: purple;
+    display: flex; /*khai báo lớp nav sẽ có cấu trúc của flex box với lớp nav sẽ làm flex container 
+        và các lớp con TRỰC TIẾP sẽ làm flex item
+        => các flex item sẽ tự động thành hàng ngang do flex-direction mặc định là row*/
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0px;
+}
+
+.nav-list {
+    padding-left: 0;
+    margin: auto 16px;
+    color: yellow;
+}
+
+
+.nav-item {
+    list-style: none; /*bỏ các dấu chấm đầu dòng. ngoài "none" ra thì có thể dùng để tùy chỉnh phần đầu dòng*/
+    margin: 0 8px;
+    display: inline-block; 
+    /*display: thể thiện
+        - inline: trong 1 hàng
+        - block: trong 1 khối
+        - inline-block: trong 1 hàng và trong 1 khối :)
+    => làm cho các item nằm trên 1 hàng trong khối
+    */
+}
+
+
+/* form điền thông tin */
+
+.form-layout {
+    width: 100%;
+    height: 300px;
+    background-color: rgb(178, 111, 223);
+    position: relative;
+
+}
+
+.form-background {
+    background-color: rgb(248, 200, 110);
+    padding: 20px;
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    left: 200px;
+    right: 200px;
+}
+
+.form-row {
+    display: flex;
+    padding: 8px 0;
+}
+
+.from-inline {
+    display: inline-flex; /*thì cũng là flex nhưng trên cùng 1 hàng*/
+    padding: 8px 0 ;    
+}
+
+.form-label {
+    /*do chữ name và password ko bằng nhau => bị lệch*/
+    min-width: 80px; /*tương tự min-height dùng cho việc làm cho khoảng cách giữa name và pass bằng nhau
+    => vẫn là tiện vãi*/
+}
+
+.form-input {
+    flex: 1; /* (flex-basis) trong layout flex thì phần tử nào có flex >= 1 
+    thì phần tử đó sẽ cố gắng chiếm không gian có thể theo main axis 
+    => dùng để cho chiếm hết phần còn lại trong flex container*/
+}
+
+
+/* cột văn bản column */
+.column-layout {
+    display: flex;
+    background-color: rgb(230, 224, 224);    
+    flex-direction: column;
+}
+
+/* ngoài ra chúng ta có thể thay đổi hiệu ứng/ cấu trúc tùy theo kích thước màn hình
+=> có thể dùng khi đổi sang kích thước màn hình nhỏ hơn (pc -> đt) 
+sử dụng @media:
+khi độ lớn màn hình > 740px thì flex-direction: row; (màn hình pc)
+nếu ko thì như cũ flex-direction: column; (màn hình đt)
+*/
+
+@media (min-width: 740px){
+    .column-layout {
+        flex-direction: row;
+    }
+}
+
+
+.column {
+    padding: 0 16px; /*dùng padding thay cho margin vì ko muốn có khoảng cách giữa các item mà vẫn cách vô đc*/
+    /*có thể để flex lên đây cũng đc*/
+}
+
+/* thêm vào đó thì ta có thể thay đổi vị trí xuất hiện bằng order */
+
+.left {
+    flex: 1; 
+    /* order: 2; */
+}
+
+.main {
+    flex: 1.5; /*có kích thước gấp 1.5 / 1 so với flex: 1*/
+    /* order: 1; */
+}
+
+.right {
+    flex: 1;
+    /* order: 3; */
+}
+
+
+/* khối văn bản feature */
+
+.feature-layout {
+    display: flex;
+    justify-content: space-around; /*space-around sẽ bao phủ đối tượng bằng 1 khoản có độ lớn bằng nhau*/
+    background-color: rgb(221, 139, 16);
+    /*ngoài ra khi thu nhỏ cửa sổ thì các item chỉ thu nhỏ theo chứ ko rớt xuống dòng
+    => muốn rớt XUỐNG  thì sài wrap:*/
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    height: 170px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    flex-basis: 30%; /*xác định kích thước 30% với 3 item => còn 10% khoảng trống => dùng cho space-around*/
+}
+
+.feature-item:nth-child(1) { /*dùng :nth-child(1) để truy cập vào phần tử thứ 1  */
+    background: url(https://webstatic.hoyoverse.com/upload/op-public/2023/01/12/da73e7545810251e7c65a077b5bb48f9_271835244487449186.jpg)
+        top center /100% no-repeat;
+    color: orange;
+}
+
+.feature-item:nth-child(2) {
+    background: url(https://uploadstatic-sea.mihoyo.com/strategyweb/20200803/2020080318080432069.png)
+        top center /100% no-repeat;
+    color: rgb(63, 202, 70);
+}
+
+.feature-item:nth-child(3) {
+    background: url(https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20210730/2021073016444264458.png)
+        top center /100% no-repeat;
+    color: rgb(63, 202, 70);
+}
+
+
+/*cái gì đó nằm chính giữa*/
+.center-layout {
+    background-color: rgba(129, 45, 207, 0.5);
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    max-width: 640px;
+    height: 360px;
+    display: flex;
+}
+
+.center-item {
+    margin: auto; /*sau khi flex thì cho auto là ok :)*/
+    height: 200px;
+    width: 400px;
+    background: url(https://c4.wallpaperflare.com/wallpaper/685/843/598/date-a-live-tokisaki-kurumi-hd-wallpaper-preview.jpg)
+    top center ;
+    background-size: contain;
+}
+
+
+/* chart (biểu đồ) */
+.chart-layout {
+    height: 320px;
+    padding: 10px 0;
+    background-color: rgb(143, 15, 218);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end; /*đảo chiều lại*/
+}
+
+.chart-item {
+    width: 60px;
+    height: var(--percent); /*với --percent là biến cục bộ*/
+    color: red;
+    background-color: green;
+
+    /*ngoài ra nếu muốn thì có thể thêm animation vào nhìn cho đẹp
+    với cú pháp:
+    animation: <tên (là cái keyframes đã đc xác định)> <kiểu xuất hiên/ tốc độ xuất hiện> <thời gian>;
+    */
+    animation: growth ease-in 1s;
+    /*f5 đi r thấy*/
+}
+
+@keyframes growth { /*@keyframes dùng để xác định hành động của animation*/
+ from { /* animation sẽ hoạt động từ from đến to*/
+    opacity: 0; /*độ trong suốt*/
+    height: 0;
+ }
+ to {
+    opacity: 1;
+    height: var(--percent);
+ }
+}   
+
+/* advanced column */
+
+.column-advanced-layout {
+    display: flex;
+    background-color: rgba(0, 255, 255, 0.425);
+    color: rgb(134, 65, 40);
+    max-width: 740px;
+    min-height: 360px;
+    margin: 12px auto 48px auto;
+    padding: 4px 16px;
+
+}
+
+.column-advanced-item-left {
+    background-color: aliceblue;
+    padding: 4px 16px;
+    flex: 0.5;
+
+}
+
+.column-advanced-item-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-right:nth-child(1) {
+    flex: 1;
+    padding: 4px 16px;
+    background-color: blueviolet;
+}
+
+.item-right:nth-child(2) {
+    flex: 1;
+    padding: 4px 16px;
+    background-color: yellowgreen;
+}

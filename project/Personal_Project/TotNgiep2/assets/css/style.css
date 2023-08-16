@@ -1,0 +1,166 @@
+/* reset css nào */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%;
+    /* font-size: 1.6em; */
+}
+
+.btn {
+    display: inline-block;
+    background-color: transparent; /*cho background thành trong suốt*/
+    border: none; /*xóa viền*/
+    outline: none; /*xóa vòng ngoài*/ 
+    text-decoration: none; /*xóa gạch chân của link*/
+    color: #fff;
+}
+
+.row {
+    display: flex;
+}
+
+.col-2 {
+    justify-content: space-between;
+}
+
+.col-3 {
+    justify-content: space-around;
+}
+
+:root {
+    --headerBackGroundColor: #0000005b;
+    --headerHeight: 4em;
+
+    --headerBtnHoverBackGrounfColor: #b1acac;
+    --headerBtnHoverColor: #000;
+
+    --contentBackGroundColor: #c6f3f5;
+    --contentHeight: 40em;
+
+    --StationBackGroundImage: linear-gradient(0, rgba(201, 201, 25, 0.4), rgba(38, 112, 155, 0.4));
+
+    --footerBackGroundColor: #423e3e;
+
+}
+
+/* base */
+/* ////////////////////////////////////////////////// */
+/* main */
+
+.Header {
+    width: 100%;
+    height: var(--headerHeight);
+    background-color: var(--headerBackGroundColor);
+
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+}
+
+.Header__Navbar {
+    list-style: none;
+}
+
+.Navbar-btn {
+    line-height: var(--headerHeight);
+    padding: 0 24px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.Navbar-btn:hover { 
+    background-color: var(--headerBtnHoverBackGrounfColor) !important;
+    color: var(--headerBtnHoverColor) !important;
+}
+
+.Header__Logo {
+    background-color: #b1acac;
+    margin-right: 12px;
+}
+
+.Header__Logo img {
+    object-fit: fill;
+}
+
+/* ///////////////// */
+
+.Banner {
+        /* margin-top: var(--headerHeight); */
+        padding-top: 46.64%;
+        background: url(/assets/img/temple.jpg) top center /cover no-repeat;
+        position: relative;
+}
+
+/* ///////////////// */
+
+.Content {
+    background-color: var(--contentBackGroundColor) ;
+    background-image: var(--contentBackGroundImage);
+    height: var(--contentHeight) ;
+    padding: var(--headerHeight) 0;
+}
+
+.Station {
+    width: 27%;
+    background-image: var(--StationBackGroundImage);
+    padding: 2em;
+    border: 1px solid #000;
+    border-radius: 20px;
+}
+
+.Station__Name {
+    font-size: 3em;
+    text-align: center;
+}
+
+.Station__status {
+    margin: 2em 0;
+    list-style: none;
+    font-size: 2em;
+}
+
+.Station__btn button {
+    background-color: aqua;
+    padding: 1em 0;
+    border: 1px solid #000;
+    border-radius: 10px;
+
+    min-width: 10em;
+
+    text-align: center;
+}
+
+.Station__btn button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+
+
+
+/* ///////////////// */
+
+.footer {
+    height: var(--headerHeight);
+    background-color: var(--footerBackGroundColor) ;
+    color: #fff;
+    padding: 0.8em 2.4em;
+
+    position: relative;
+    bottom: 0;
+}
+
+/* ////////////////////////////////////////////////// */
+/* beak point */
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+{"Count":1,"Items":[{"IotTs":{"N":"1686209892758"},"LocalTime":{"S":"Thu Jun  8 07:38:12 2023\n"},"cps":{"N":"0"},"uSv":{"N":"0"},"timestamp":{"N":"1686235092"},"stationName":{"S":"Tram1"},"humidity":{"N":"58"},"temperature":{"N":"28"}}],"LastEvaluatedKey":{"stationName":{"S":"Tram1"},"IotTs":{"N":"1686209892758"}},"ScannedCount":1}

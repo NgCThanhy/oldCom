@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tin nhắn trượt vào theo BEM</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styleToastMess.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    </head>
+
+    </head>
+    <body>
+        <img src="https://cdn.dribbble.com/users/4054/screenshots/4580930/media/8e121559e53ad2476bcb1d10b24e5c7d.png" alt="ToastMess">
+        
+        <p>xem xét vd và tạo 1 đối tượng bao gồm: <br/>
+            <ul>
+                <li>1 dấu tích</li>
+                <li>1 dấu x</li>
+                <li>1 phần nội dung</li>
+                <li>1 tiêu đề</li>
+            </ul>
+            => cần 1 div làm block chứa 3 phần element 2 dấu và nội dung
+        </p>
+        
+        <div class="ToastMess">
+            <div class="ToastMess ToastMess--success">
+            
+                <div class="ToastMess__icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                
+                <div class="ToastMess__body">
+                    <h3 class="ToastMess__title">success</h3>
+                    <p class="ToastMess__mess">muhahahahahahahahahahahahahahahahahahahahahahahahahaha</p>
+                </div>
+                
+                <div class="ToastMess__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            
+            </div>
+        </div>
+
+        <div class="ToastMess ToastMess--warning">
+        
+            <div class="ToastMess__icon">
+                <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+        
+            <div class="ToastMess__body">
+                <h3 class="ToastMess__title">warning</h3>
+                <p class="ToastMess__mess">muhehehehehehehehehehehehehehehehehehehehehehehehehehe</p>
+            </div>
+        
+            <div class="ToastMess__close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        
+        </div>
+
+        <div class="ToastMess ToastMess--info">
+        
+            <div class="ToastMess__icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+        
+            <div class="ToastMess__body">
+                <h3 class="ToastMess__title">info</h3>
+                <p class="ToastMess__mess">muhihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihiii</p>
+            </div>
+        
+            <div class="ToastMess__close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        
+        </div>
+
+        <div class="ToastMess ToastMess--error">
+        
+            <div class="ToastMess__icon">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+        
+            <div class="ToastMess__body">
+                <h3 class="ToastMess__title">error</h3>
+                <p class="ToastMess__mess">huhuhuhuhuhuhuhuhuuhuhuhuhuhuhuhuhuhuhuhuhuhuhuhuhuuuhuhuhuuhuhuhuhuhuhuhuhuhuhuhuhuhuhuhuhuu</p>
+            </div>
+        
+            <div class="ToastMess__close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Event</title>
+    <style>
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM Event</h1>
+    <p>DOM Event là các sự kiện diễn ra trong DOM <br/>
+        => nó sảy ra khi người dùng tương tác với trang wed hoặc bản thân trình duyệt wed hoạt động
+    </p>
+
+    <ul>
+        <h2>phân loại:</h2>
+        <li>người dùng
+            <ul>
+                <li>The FocusEvent: khi tập trung (di chuột hoặc khối) thì phải
+
+                </li>
+
+                <li>The InputEvent: khi nhập
+
+                </li>
+
+                <li>The KeyboardEvent: khi tương tác bàn phím
+
+                </li>
+
+                <li>The MouseEvent: khi tương tác chuột
+
+                </li>
+
+                <li>The TouchEvent: khi tương tác cảm ứng
+
+                </li>
+
+                <li>The WheelEvent: khi tương tác con lăn lên xuống
+
+                </li>
+
+            </ul>
+        </li>
+        <li>trình duyệt wed: <br/>
+            như việc tải url hoặc reload....
+        </li>
+
+        <li> ngoài ra còn một số event chung</li>
+    </ul>
+
+    <div class="VdClick">
+        <button class="vd__1" onclick="
+                                        console.log(this); 
+                                        this.classList.toggle('red');
+                                        console.log(event.target);
+                                    ">
+            vd Attribute event
+        </button>
+
+        <button class="vd__2">
+            vd Assign event
+        </button>
+
+        <button class="vd__3">
+            vd Assign event 1
+        </button>
+
+        <button class="vd__3">
+            vd Assign event 2
+        </button>
+
+        <button class="vd__3">
+            vd Assign event 3
+        </button>
+    </div>
+
+
+    <div class="Input">
+        <label for="firstname">Họ tên:</label>
+        <input type="text" name="firstname" id="firstname"> <br/>
+
+        
+        <input type="checkbox" name="love1" id="love3" value="bronya">
+        <label for="love3">Shinobu iz da best</label><br>
+
+
+        <label for="select">date a live</label><br>
+        <select name="select" id="select">
+            <option value="1">dead</option>
+            <option value="2">live</option>
+        </select>
+    </div>
+        
+
+    <div class="Prevent">
+        <a href="https://www.mangaupdates.com/series/fpbzazn/kurogane-ikezawa-haruto">
+            kurogane bản anh kiếm
+        </a>
+
+        <br/>
+        
+        <a href="https://www.mangaupdates.com/series/37uxfks/suzuka">
+            suzuka 
+        </a>
+    </div>
+
+    <style>
+        .Search ul {
+            display: none;
+        }
+
+        input:focus ~ ul { /* dấu ~ để truy cập đến 1 thẻ cùng cấp trong thẻ cha*/
+            display: block;
+        }
+
+    </style>
+    <div class="Search">
+        <input type="text" name="Search" placeholder="tìm kiếm">
+        <ul>
+            <li>kiana</li>
+            <li>mei</li>
+            <li>bronya</li>
+        </ul>
+    </div>
+
+    <div class="btnPropagation">
+        <button>trigger</button>
+    </div>
+
+    <div class="Listener">
+        <button>nhấp em điii</button>
+    </div>
+
+    <script src="./mainDOMEvent.js"></script>
+</body>
+</html>

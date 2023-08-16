@@ -1,0 +1,12 @@
+:root{ /* lớp ảo*/
+    --primary : blue; /* biến toàn cục*/
+}
+
+ol {
+    color: var(--primary); /* sử dụng biến để đưa vào*/
+    font-size: 30px;
+}
+#second {
+    --coloo : green;
+    color: var(--coloo); /* biến cục bộ => ko thể sử dụng bên ngoài*/
+}

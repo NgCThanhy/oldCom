@@ -1,0 +1,327 @@
+bắt đầu tạo 1 project nodejs:
+
+1/ tải và kiểm tra nodejs :)
+    vô terminal của folder chứa project gõ:
+        node -v         => thư viện nodejs
+
+        npm -v          => Node package manager (công cụ tạo và quản lý các thư viện lập trình Javascript cho Node.js)
+
+    nếu thấy version nào đó thì ok
+
+2/ cấu hình ban đầu cho project
+    có 2 cách: 
+        
+        - bằng terminal: gõ:
+            + npm init
+            + <tên package> (mặc định trùng tên vs folder) 
+            + <version> (mặc định 1.0.0)
+            + <description> (mô tả)
+            + <entry point> (mặc định là index.js, là file mà nó sẽ chạy mặc định đầu tiên như index.html v á)
+            + <test command> (các lệnh trên terminal cho chương trình chạy => có thể tự tạo lệnh terminal)
+            + <git reponsitory> (liên kết vô kho của github ấy mà) (của pé nà: https://github.com/NgCThanhy/f8_nodejs_self_learning.git)
+            + <keywords> (mún nói gì về project này ko)
+            + <author> (tên mình á)
+            + <license> (mặc định ISC)
+        
+            sau khi thêm các thông tin trên vào terminal thì nó sẽ hiện 1 form đầy đủ để xem lại
+            => nếu ok thì enter 
+            => nó sẽ tự tạo 1 file package.json với các thông tin trên.
+
+        - bằng kiểu json trên 1 package.json
+            + new 1 cái package.json
+            + gõ vô bằng tay các thông tin như trên terminal
+            :)
+            *** chú ý phần <test command> là "scripts" nơi chứa các lệnh tự tạo
+
+3/install express
+    - lên gg để xem cách cài: npm express
+        => gõ vô:  npm install express
+
+    - nhìn vô folder xem có file package-lock.json ko hoặc vô package.json xem dependencies có version express ko
+        =>nếu có thì đã thành công
+
+    - với express là một framework/thư viện được xây dựng trên nền tảng của Nodejs.
+    Nó cung cấp các tính năng mạnh mẽ để phát triển web hoặc mobile
+
+4/ tạo entry point:
+
+    - sau khi đã có package.json thì bắt đầu tạo file index.js:
+        => new 1 file index.js rồi để đó :)
+
+    - vào trang chủ của express (https://expressjs.com/) để xem các bước làm:
+        + Installing (đã làm thông qua 4 bước trên)
+
+        + Hello world example : trong index.js (qua đó xem)
+            để chạy file / project thì gõ: node index.js
+            muốn quay lại tương tác terminal thì:  ctrl + c
+
+            cứ ctrl + c hoài mệt 
+            => thêm thư viện Nodemon để khi refresh hoặc lưu lại code thì nó tự cập nhật lên wed 
+            lên gg để xem cách cài: npm Nodemon
+            =>  npm install Nodemon (mún cài vào full máy tính thì npm install -g Nodemon => ko nhá )
+            tuy nhiên thực tế Nodemon chỉ sử dụng trong quá trình phát triển (dev) và khi chạy trên wed thực tế thì ko cần
+            => chỉ cài vô devDependencies
+            => gõ vô: npm install nodemon --save-dev
+            sau đó vào file package.json vào phần scripts thêm phần tử sau:
+                "start": "nodemon ./index.js", 
+            v là ta đã thêm 1 lệnh terminal là khi gọi start thì nó sẽ cấp cho nodemon đường dẫn vô file index để nó sử lý
+            => mún chạy thì gõ vô terminal: npm start
+
+            ngoài ra nodemon còn hỗ trợ debug 
+            => trong scripts thì đổi thành:
+                "start": "nodemon --inspect ./index.js",
+            sau đó trong wed chuột phải vô phần kiểm tra(inspect) thì nhấp vào biểu tượng nodemon màu xanh góc trái trên
+            => vô đc devtool y chang của html
+            ** có phần source có thể thêm break để debug
+
+            tiếp theo để debug cho wed (cái thứ mà đôi khi nó ko hiện lỗi)
+            thì cần phải quan sát đc các request cũng như hoạt động của trình duyệt
+            => sài thư viện morgan
+            => npm install morgan --save-dev
+            sau đó phải import vào index:
+                const morgan = require('morgan') // import thư viện morgan
+                app.use(morgan('<lên gg xem muốn mod nào>')) // sử dụng (sài mod combined đê)
+            sau đó chạy wed sẽ thấy info dưới terminal
+
+            ****** sau mớ trên thì ta sẽ đc một số thư viện hỗ trợ việc code:
+                        Nodemon     => debug code
+                        morgan      => debug terminal
+
+    - sử dụng Template engine (handlebars)
+        theo lý thuyết thì ta có thể code nguyên 1 cái wed với cú pháp html và trong phần app.get của file index.js
+        nhưng chả ai rảnh mà làm v do quá rối và bất tiện
+        => sử dụng Template engine để có thể giúp viết ra các file html hiệu quả hơn
+
+        thì tương tự như các npm package khác thì lên mạng kím cái express handlebars 
+        => npm install express-handlebars
+
+        ///////////////////////////////    
+        ** sử dụng handlebars:
+            như các Template khác (spring boot chẳng hạn) thì handlebars sẽ có một cấu trúc file cố định để tạo 1 file
+            và hình như cấu trúc đó có thể đổi đc :) chắc cố định!
+        
+            => ta tạo 1 cấu trúc file như sau (cái nào có sẵn thì cho vào đúng vị trí):
+
+            trong folder chứa project (f8_nodejs_self_learning):
+                >node_modules                                => folder chứa các thư viện
+                >src                                         => folder chứa source code chính
+                    index.js                                 => file chạy chính và điều khiển các tài nguyên
+                    >resources                               => folder chứa các tài nguyên (ảnh, css ..)
+                        >scss                                => ???????
+                        >views                               => folder chứa các file .handlebars để cấu hình giao diện wed
+                            home.handlebars                  => file .handlebars (html) cấu hình trang chủ
+                            news.handlebars                  => file .handlebars (html) cấu hình trang tin tức
+                            >layouts                         => folder chứa các thể hiện cố định của 1 wed (header, footer, ...)
+                                main.handlebars              => file .handlebars (html) cấu hình cái khung cho wed (sẽ nhét các thành phần khác vô)
+                            >partials                        => folder tách phần footer, header .. ra ngoài để dễ code
+                                header.handlebars            => file .handlebars (html) cấu hình phần header :) 
+                                footer.handlebars            => file .handlebars (html) cấu hình phần footer :) 
+                {} package.json                              => file .json chứa các thành phần thông tin cấu hình của project
+                {} package-lock.json                         => file .json quản lý các thành phần phụ thuộc ( mấy cái thư viện import )
+
+            ///////////////////////////////
+
+        ok bây h sẽ lo vô từng phần chi tiết:
+            . import handlebars: cài thì phải sài
+                index.js -> const handlebars = require('express-handlebars');
+                app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' })) 
+                app.set('view engine', 'handlebars');
+                ..... qua index mà xem
+
+            . sài :
+                app.get('/home', (req, res) => { res.render('home'); });
+                với render sẽ auto chui vào folder views và kím file home.handlebars
+                sau đó nó nhét file này vào trong phần body của cái khung wed: >layouts -> main.handlebars
+
+            . tạo layouts:
+                tạo main.handlebars với cấu trúc cơ bản của html đê
+                sau đó tạo một vài cái header và footer cơ bản
+                => qua main xem
+                => bây h wed đã có thể chạy cơ bản ok r
+
+            . tạo partials:
+                thay vì nhét header và footer vào chung main.handlebars
+                ta có thể tách ra để dễ code - quản lý
+                => tạo đê rồi code html vào 2 phần đó
+                => nhét vô main
+        
+        ok xong r => thêm một vài page wed đê vd new.handlebars chẳng hạn
+
+    - scss/sass
+        
+        thông thường khi làm 1 dự án thực tế thì số lượng dòng code khá là khủng bố
+            => người ta sẽ cố gắng tách nhỏ thành những hàm, lớp, module, file nhỏ rồi import lại vs nhau sau 
+            => nói chung là người ta sẽ cố gắng sử dụng các quy tắt code của các ngôn ngữ như c/c++, java ...
+        tuy nhiên đối vs html và css thì ko có nhũng cấu trúc như trên
+            => sài các thư viện trung gian để code cho gọn:
+                html -> handlebars
+                css  -> scss/sass
+        ngoài mấy cái đó thì còn khá nhìu, tự lên gg tìm hiểu thêm. 
+
+        đối vs handlebars thì nodejs đã có cơ chế cho các trình duyệt wed tự hiểu như file html
+        còn scss/sass thì méo => cần phải đổi lại thành css rồi link vào phần <head> của layouts
+         
+        *** trong các wed mà tự làm (vd wed honkai) thì ta thường có 1 folder dùng để chứa các file tĩnh (img, css....)
+        folder đó thường là assets
+        trong nodejs cũng cần phải có 1 folder như v => đặt là public đê
+
+        ==> từ mớ giải thích bên trên thì ta sẽ cần phải:
+            
+            + tạo 1 folder >public trong src để chứa file tĩnh 
+
+                trong folder src:       
+                    >src
+                        >public
+                            >css
+                                app.css
+                            >image
+                                honkai.jpg
+                        >resources
+
+            + tạo 1 folder scss trong resources để code ( hình như đã tạo r)                    <---- ???????
+                tạo các file .scss để code:
+                    >scss   
+                        _variable.scss          => dùng để chứa các biến 
+                        app.scss                => nhớ @import 'variable'; vô  
+
+                ** chả biết là cơ chế gì nhưng hình như phải có _ ở đầu các file đc import thì khi cập nhật các file đó
+                    thì file app.scss cũng cập nhật theo => chỉ cần ấn lưu 1 lần ở bất cứ đâu
+                
+
+            + chuyển từ scss thành css và lưu vô public
+
+                đầu tiên phải cài sass/scss cái đã 
+                    với node-sass đã cũ và dart-sass mới nhất dùng cho dart
+                    sass này là một phiên bản dart-sass dùng cho nodejs
+                    => npm install sass --save-dev   (chỉ cho vô dev thôi do thực tế wed đâu có đọc đc scss)
+
+                sau đó thêm lệnh terminal cho nó (đặt là watch đê)
+                cú pháp:    sass <các options> <đường dẫn vô file .scss>:<đường dẫn vô file .css>
+                    ** options lên gg xem sass phần Command Line Interface
+                    ** thông thường scss sẽ có nhìu file => dẫn vào folder
+                    ** tuy nhiên nếu dẫn vô folder thì cả in và out đề phải là folder
+                                   
+                    => "watch": "sass --watch src/resources/scss/app.scss:public/css/app.css",
+
+                sử dụng:
+                    vô terminal gõ: npm run watch
+                    => nó sẽ tự xem nếu có sự thay đổi trong .scss (--watch) thì nó sẽ tự cập nhật và lưu vào file .css
+
+    - truy cập file tĩnh trong public
+        tạo r phải sài đc chớ
+
+        + truy cập bằng url (path) trên trình duyệt
+            sử dụng express.static():
+            trong file index :
+            add.use(express.static(<đường dẫn vô public>)) 
+            => qua index xem
+            ok => có thể truy cập các file trong public bằng url 
+            vd: http://localhost:3000/image/honkai.jpg
+
+        + gán vô html, css để cấu hình wed
+            thì link vô file main trong layouts thôi
+            <link rel="stylesheet" href="/css/app.css">
+
+            với đường dẫn đã đc cho ra static thì nó cũng tương đương việc nhập url thôi
+
+5/ sử dụng Bootstrap
+    thông thường thì lại phải học thêm cách code sass/scss để tạo nữa. nhưng lười
+    => sài hàng làm sẵn: Boostrap :)
+
+    Bootstrap là một framework bao gồm các HTML, CSS và JavaScript template dùng để phát triển website chuẩn responsive.
+    responsive cho các kích thước giao diện khác nhau á
+
+    ** sài khá giống vs Font Awesome á (qua phần tự học html xem lại đê)
+    => lại add vô bằng link trong >layouts -> main.handlebars
+        vô getbootstrap.com xem đê
+
+
+    để sử dụng hàng có sẵn:
+        vô getbootstrap.com kím phần Components rồi lựa cái gì mún thì copy vô file .handlebars (tại nó là file .html mà)
+        => sài navbar đưa vô header.handlebars
+
+        mún thay đổi gì thì cứ đổi các class
+
+6/ Query parameters
+    ta đã biết rằng khi trình duyệt wed gửi request cho server sẽ thông qua các method của http
+    các method đó sẽ chứa các thông tin của client cũng như yêu cầu
+    với một số method như POST sẽ có những custom riêng để chứa dữ liệu gửi
+    tuy nhiên đối với GET thì ko như v (do đây là phương thức yêu cầu dữ liệu )
+    => người ta tạo ra cách chứa dữ liệu dạng object vô url lun
+    => gọi là Query parameters
+
+    cú pháp:
+        ulr:    <PATH>?<key1>=<value1>&<key2>=<value2>&... 
+
+        với:
+            PATH là đường dẫn hợp lệ thông thường mún đc gán dữ liệu
+            <key1>=<value1> là các cặp key-value của object
+            PATH và các cặp key-value phân cách nhau bằng dấu ?
+            các cặp key-value phân cách nhau bằng dấu &
+
+        vd: http://localhost:3000/news?name=Thành&age=22&sex=male
+            sẽ chứa object: query = {
+                                        name: 'Thành',
+                                        age: 22,
+                                        sex: male
+                                    }
+    
+    lý thuyết thế đủ r h tạo 1 phần tìm kiếm trong wed nào:
+
+        tạo 1 file search.handlebars trong partials để tạo thanh tìm kiếm
+            => chỉnh lại layouts
+
+        nhét Bootstrap thanh tìm kiếm vào
+
+        sau đó thử đưa thông tin vào url thử sau đó console.log ra thông tin thông qua req.query
+        vd: http://localhost:3000/search?name=Thành&age=22&sex=male
+
+            (req, res) => { 
+                            console.log('object query: ', req.query);
+                            res.render('new'); 
+
+                        });  
+
+7/ form behavior
+    ngoài việc gõ bằng tay vô url như trên thì ta còn có thể tạo form để submit 
+    sau đó các thông tin sẽ tự động đc điền vào và gửi
+    => quay lại html mà học lại form đê
+
+    khi bấm vào input/button có type là submit thì nó sẽ load lại trang tiến hành action dựa theo method của form
+        action sẽ chứa url mà nó sẽ chuyển hướng tới cùng vs mới dữ liệu
+            default là địa chỉ hiện tại
+        method sẽ xác định phương thức HTTP 
+            default là GET
+            => nếu ko có app.<method>('<action>', {} ) nào đc xác định trong index thì ko nhận đc submit
+        *********** chú ý:
+            phương thức GET sẽ tạo ra 1 Query parameters => hiện lên trên url á => dễ rò dữ liệu
+
+        vd tạo 1 đường dẫn nhận method GET để in ra những gì mà phần search nhận đc
+            => qua index xem phần trang search
+
+8/ POST method
+    để tránh việc rò dữ liệu thì khi cần gửi dữ liệu a sẽ dùng POST
+
+    tạo 1 trang chuyên dùng để đăng nhập : (chỉ mới gửi dữ liệu thôi chưa có database)
+        login.handlebars trong views
+        phần form sẽ để method là POST với action mặc định
+
+    để lấy dữ liệu của POST thì ta dùng req.body (tương tự như req.query của get)
+        tuy nhiên ko như biến query đã đc tích hợp vô sẵn mỗi khi get,
+        body lại chưa được gán dữ liệu từ wed vào => cần sài thư viện urlencode() của express:
+            app.use(express.urlencode())... gì đó qua index xem
+
+yep và thế là xong phần tutorial nhá
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+li:first-child {
+    color: blue;
+}
+
+li:last-child {
+    color: brown;
+}
+
+#hover:hover {
+    color: red;
+}
+
+#active:active {
+    color: red;
+}
+
+
+
+.box {
+    width: 50%;
+    height: 150px;
+    background-color: rgba(33, 89, 209, 0.5);
+    /*mặc định display : block*/
+}
+
+.boxIn {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+}
+
+.box::before {
+    content: "heluu"; /*phần này rất quan trong luôn phải có và có thể để trống ""*/
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    /*sau cái mớ trên kia thì vẫn chưa tạo ra đc 1 hình vuông (dù đã có w và h) 
+    => cần phải định hình nó bằng display */
+    display : block;
+}
+
+.box::after {
+    content: "byeee";
+    width: 50px;
+    height: 50px;
+    background-color: rebeccapurple;
+    display : block;
+}
+/*với 2 element trên thì chỉ được có duy nhất một thui*/
+
+#fletter::first-letter {
+    font-size: 30px;
+}
+
+#fline::first-line {
+    font-size: 40px;
+}
+
+#selection::selection {
+    color: yellowgreen;
+}

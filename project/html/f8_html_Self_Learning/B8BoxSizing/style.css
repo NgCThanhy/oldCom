@@ -1,0 +1,28 @@
+.box1 {
+    width: 74px;
+    height: 74px;
+    color: #fff;
+    background-color: black;
+    padding: 10px;
+    border: 3px solid red;
+    /* => phải giảm w và h lại để tổng là 100px */
+}
+
+.box2 {
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    background-color: blueviolet;
+    padding: 10px;
+    border: 3px solid rgb(228, 197, 20);
+    box-sizing: border-box; /*và bùm ko cần tính toán chỉnh sửa gì cả.
+    tuy nhiên do đây là do máy tự tính toán nên nếu cho padding và border có kích thước quá lớn (> w và h) 
+    thì có thể làm sai lệch mà cụ thể là trừ sạch phần content và làm lệch chữ chứa trong nó*/
+    
+    /* ngoài ra còn có một số tính năng khác như:
+        box-sizing: content-box; ( mặc định) thì sẽ để y chang cũ mà ko làm gì cả
+        box-sizing: unset; thì dùng để hủy đi hiệu ứng của border-box    
+    */
+
+
+}

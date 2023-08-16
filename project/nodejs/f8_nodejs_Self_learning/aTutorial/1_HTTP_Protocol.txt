@@ -1,0 +1,61 @@
+HTTP protocol - Hypertext Transfer Protocol (giao thức truyền tải siêu văn bản)
+là cách thức mà 1 wed được truyền tải trên internet
+lưu ý một trang wed sẽ được chứa trong 1 máy chủ (host) và các dữ liệu của nó sẽ chứa trong database
+
+các bước để truy cập 1 wed:
+
+    1/ gõ url của 1 trang wed vào 1 trình duyệt wed (chrome)
+
+    2/ trình duyệt wed sẽ gửi yêu cầu (request) lên host theo thông tin của url
+
+    3/ host dựa theo các yêu cầu của url mà phản hồi (response) bằng cách gửi về các file .html (source code)
+
+    4/ trình duyệt đọc các file .html đó để đọc và hiển thị trang wed
+
+
+có một số phương pháp (method) request:
+
+    - request method : GET        => dùng để lấy dữ liệu
+    
+    - request method : POST       => dùng để gửi dữ liệu lên server
+    
+    - request method : PUT        => 
+    
+    - request method : DELETE     => 
+    
+    - request method : PATCH      => 
+    
+    - request method : CONNECT    => 
+    
+    - request method : OPTIONS    => 
+    
+    - request method : TRACE      => 
+
+
+response phản hồi từ server về trình duyệt wed:
+theo 1 cấu trúc gồm 2 phần cách nhau bằng 1 hàng trống:
+
+    header: chứa thông tin về 
+        - phiên bản HTTP
+        - mã trạng thái HTTP (HTTP status code)
+        - ..... các thông tin khác để cung cấp thông tin để cấu hình
+    
+    body: chứa phần html hiển thị render
+        <html> .... </html>
+
+
+một số mã phản hồi:
+    1xx : cung cấp thông tin
+    2xx : thông báo thành công
+        200 (successful): các máy chủ sử lý yêu cầu thành công
+        ....
+    3xx : sự điều hướng lại
+        301 (moved Permanently): wed yêu cầu đã bị di chuyển vĩnh viễn đến url mới
+        ....
+    4xx : lỗi ở phía client
+        404 (not found) : quen hem :)
+        ....
+    5xx : lỗi ở phía server
+
+
+    

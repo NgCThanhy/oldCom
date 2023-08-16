@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>css cho phần tử liền kề</title>
+        <meta charset="utf-8">
+        <style>
+            .testCss {
+                display: inline-block;
+                background-color: aqua;
+            }
+
+            .testCss + .testCss { /*chỉ css cho phần tử .testCss liền kề => cái đầu tiên ko có*/
+                margin-left: 50px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <p>nếu có nhiều đối tượng cùng loại nằm liền kề nhau: thì ta có thể css cho đối tượng nằm kế tiếp của nó:</p>
+        <div class="testCss ">hahaha</div>
+        <div class="testCss ">hahaha</div>
+        <div class="testCss ">hahaha</div>
+    </body>
+</html>

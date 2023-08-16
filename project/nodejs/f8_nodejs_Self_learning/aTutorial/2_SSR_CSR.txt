@@ -1,0 +1,40 @@
+server side rendering & client side rendering
+
+render - kết xuất : là tổng kết lại và xuất ra cho người dùng
+
+1/  server side rendering : bên server sẽ lo phần render
+    => các phần thiết kết đồ họa cấu hình đều nằm trong phần body của response
+
+    ưu điểm: 
+        - do việc body của response chứa hầu hết file .html 
+        => các con BOT của google sẽ dễ dàng đọc nội dung và phân loại cũng như xếp hạng
+        => dễ CEO
+
+    khuyết điểm:
+        - cũng vs lý do như trên mà mỗi lần tương tác vs wed thì phải load lại toàn bộ trang wed
+        => lâu vl
+        => trải nghiệm người dùng kém (chơi game chắc đập máy)
+
+2/  client side rendering : bên client sẽ lo phần render
+    => trong body của response sẽ không chứa nhiều đồ họa
+    => sẽ cần phải kèm theo 1 file .js để cho trình duyệt wed đọc và hiển thị đồ họa
+    => cần API
+    
+    ưu điểm: 
+        - do việc tạo file .html thuộc về trình duyệt wed (client) 
+        => mỗi lần tương tác sẽ ko cần phải load lại cả wed
+        => tăng trải nghiệm người dùng
+
+    khuyết điểm:
+        - do các con BOT ko thể đọc đc file .js 
+        => ko thể phân loại cũng như xếp hạng
+        => khó CEO, wed ko nổi đc trên các lượt tìm kiếm
+
+
+
+3/ duo
+từ các ưu khuyết điểm bên trên thì người ta có thể kết hợp cả 2 loại lại để tối ưu
+
+=> những yếu tố tốt cho CEO sẽ để trong phần body của response (phần giới thiệu chẳng hạn)
+=> những yếu tố người dùng sẽ để trong file .js (các thanh điều hướng chẳng hạn )
+

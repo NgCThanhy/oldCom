@@ -1,0 +1,14 @@
+các bước để tạo 1 wed động:
+
+    - tạo 1 file .html 
+    - tìm chỗ host file .html       => s3
+    - kiếm 1 database               => dynamoDB                  
+    - tương tác với database        => lambda
+    - kết nối .html vs database
+
+chi tiết:
+
+- tạo 1 s3 để chứa wed => ok
+- tạo 1 function trong lambda => ok
+- tạo 1 rest api kết  nối vào function lambda đó => đc 1 ulr để kích hoạt lambda ok
+- tạo 1 dynamoDB =>

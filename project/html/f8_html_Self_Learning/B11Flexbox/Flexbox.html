@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flexbox</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Kỹ thuật xây dựng layout với Flexbox</h1>
+        <p>Flexbox là một kỹ thuật có tính linh động rất cao và cần phải hiểu và nắm chắc.</p>
+        <h2>cấu tạo va bố cục của FlexBox</h2>
+        <img src="https://media.hoclaptrinh.vn/images/huong-dan-su-dung-css-flexbox-5d358e2206438.png" alt="Bố cục FlexBox">
+        <ol>
+            <h3>cấu tạo gồm 2 phần chính:</h3>
+            <li>
+                Flex container: là thẻ chứa (thường là < div class="box">)
+                
+                <ul>
+                    <li>trục main axis: trục chính. 
+                        => xác định chiều sắp xếp của các item (ngang hoặc dọc) <br/>  
+                        => xác định vị trí (vd như căn giữa thì phải cách đều main start và main end)
+                    </li>
+                    <li>main start/end: vị trí bắt đầu và kết thúc của main <br/>
+                        => quyết định thứ tự hiển thị của các item với mặc định cho tiếng việt và eng là start bên trái
+                    </li>
+                    <li>trục cross axis: trục vuông góc với trục chính <br/>
+                        => xác định chiều trong trường hợp có nhiều hàng item
+                    </li>
+                    <li>cross start/end: vị trí bắt đầu và kết thúc của hàng tiếp theo</li>
+                </ul>
+
+            </li>
+            <li>
+                Flex item: là thẻ con trực tiếp(nằm trong div)
+
+                <ul>
+                    <li>main size: kích thước theo chiều trục main của item</li>
+                    <li>cross size: kích thước theo chiều trục cross của item</li>
+                </ul>
+
+            </li>
+        </ol>
+
+        <h2>các thuộc tính trong FlexBox</h2>
+
+        <ol>
+            <li>display: khởi tạo 1 flexbox</li>
+            <li>flex-direction: xác định phương hướng của main axis ( mặc định là row(ngang) )</li>
+            <li>flex-wrap: tùy chọn xuống dòng (mặc định là nowrap) </li>
+            <li>flex-basis: xác định kích thước của main size tùy theo main axis</li>
+            <li>justify-content: căn các flex item theo main axis (căn trái, căn phải, căn giữa)</li>
+            <li>justify-self: giống như trên nhưng sẽ căn cho nội dung trong flex item <br/>
+                (tuy nhiên justify-content lại kế thừa lại cho flex item => ko cần justify-self )</li>
+            <li>align-item: căn các flex item theo cross axis</li>
+            <li>align-self: giống như trên nhưng sẽ căn cho nội dung trong flex item <br/>
+                (tuy nhiên align-content lại kế thừa lại cho flex item => ko cần align-self )</li>
+            <li>flex-grow: tăng kích thước main size</li>
+            <li>flex-shrink: giảm kích thước main size</li>
+            <li>flex: cú pháp viết ngắn của flex-basis, flex-grow, flex-shrink </li>
+            <li>flex-flow: cú pháp viết ngắn của flex-direction, flex-wrap</li>
+            <li>order: thứ tự vị trí của flex item mà ko phụ thuộc vào main start và main end</li>
+            
+        </ol>
+
+        <h2>ví dụ sử dụng flex box để tạo các phần (layout) thường có trong 1 wed:</h2>
+        <!-- nav -->
+        <p>đầu tiên thanh navbar (NAVIGATION BAR - thanh điều hướng) cho wed: <br/>
+            <ul> thông thường gồm các mục:
+                <li>menu</li>
+                <li>logo</li>
+                <li>search</li>
+                <li>login</li>
+                <li>register</li>
+                <li>account</li>
+            </ul>
+            => việc đầu tiên là đưa các mục nằm trên 1 đường thẳng => sử dụng flex box cho class "nav". <br/>
+            => tiếp theo có thể cho nó dính theo thanh trượt => dùng Sticky (hoặc Fixed) cho nav
+        </p>
+        <div class="nav">
+            
+            <ul class="nav-list">
+                <li class="nav-item"><div class="menu">menu</div></li>
+                <li class="nav-item">giới thiệu</li>
+            </ul>
+
+            <div class="nav-list "><input type="text">tìm kiếm</div>
+
+            <ul class="nav-list">
+                <li class="nav-item">đăng nhập</li>
+                <li class="nav-item">đăng ký</li>
+                <li class="nav-item">tài khoản</li>
+            </ul>
+        </div>
+
+        <!-- from -->
+        <p>tiếp theo là layout form để điên thông tin. <br/>
+        Thông thường thì phần nhập thông tin thì nên cho full khung hoặc cho cả 2 lên cùng 1 hàng <br/>
+        => ko phải phần khung form-layout hay form-background làm flex mà là phần div chứa nhãn và input
+        </p>
+
+        <div class="form-layout">
+            <div class="form-background">
+                <div class="form-row">
+                    <label class="form-label" for="name">Name:</label>
+                    <input class="form-input" type="text">
+                </div>
+                <div class="form-row">
+                    <label class="form-label" for="password">Password:</label>
+                    <input class="form-input" type="password"> <!--để type là password thì khi gõ nó sẽ cho ra ****-->
+                </div>
+
+                <div class="from-inline">
+                    <label class="form-label" for="name">Name:</label>
+                    <input class="form-input" type="text">
+                </div>
+                <div class="from-inline">
+                    <label class="form-label" for="password">Password:</label>
+                    <input class="form-input" type="password">
+                </div>
+            </div>
+        </div>
+
+        <!-- column -->
+        <p> tiếp nữa là layout column: là chia phần văn bản ra thành các cột</p>
+
+        <div class="column-layout">
+            <div class="column left">
+                <h3>YOASOBI</h3>
+                <p>YOASOBI là một "bộ đôi âm nhạc Nhật Bản" tạo ra "âm nhạc từ những tiểu thuyết" (novel into music). YOASOBI có 2 thành viên chính, gồm nhà sản xuất nhạc Vocaloid Ayase chủ yếu đảm nhiệm phần sáng tác, soạn nhạc, viết lời và ikura phụ trách góp giọng. Bộ đôi đã phát hành gần 20 video âm nhạc, trong đó có 8 bài hát đã được phát hành thêm bản tiếng Anh và nằm trong đĩa mở rộng thứ 2 "E-SIDE". Hầu hết đều dựa trên truyện ngắn được đăng tải tại Monogatary, một trang web do Sony Music Japan điều hành.</p>
+                <p>Cả hai thành viên của YOASOBI đều có thành công trong sự nghiệp âm nhạc trước khi thành lập nhóm. Ayase đã thu hút được nhiều người theo dõi trên trang Niconico của mình kể từ lần tải lên đầu tiên vào ngày 24 tháng 12 năm 2018, bài hát có tựa đề Sentensei Assault Girl (先天性アサルトガール? Cô nàng công kích bẩm sinh). Vào ngày 23 tháng 11 năm 2019, anh ấy đã phát hành EP, Yūrei Tōkyō (幽霊東京? Phố ma Tokyo), đạt thứ ba trên bảng xếp hạng album của iTunes.[1][2] Rira Ikuta (幾田りら?), biểu diễn dưới tên ikura, đã phát hành hai EP: Rerise vào năm 2017 và Jukebox vào năm 2019.[3]</p>
+            </div>
+
+            <div class="column main">
+                <h3>Yoru Ni Kakeru</h3>
+                <a href="https://www.youtube.com/watch?v=qerVyrLKzA0">Yoru Ni Kakeru</a>
+                <p>Shizumu you ni tokete yuku you ni. Futari dake no sora ga hirogaru yoru ni. “Sayonara” dake datta. Sono hitokoto de subete ga wakatta. Hi ga shizumidashita sora to kimi no sugata. Fensugoshi ni kasanatteta. Hajimete atta hi kara. Boku no kokoro no subete wo ubatta. Dokoka hakanai kuuki wo matou kimi wa. Sabishii me wo shitetan da. Itsudatte chikkutakku to. Naru sekai de nando datte sa. Fureru kokoronai kotoba urusai koe ni. Namida ga kobore sou demo. Arikitari na yorokobi kitto futari nara mitsukerareru. Sawagashii hibi ni waraenai kimi ni. Omoitsuku kagiri mabushii asu wo. Akenai yoru ni ochite yuku mae ni. Boku no te wo tsukande hora. Wasurete shimaitakute tojikometa hibi mo. Dakishimeta nukumori de tokasu kara. Kowakunai yo itsuka hi ga noboru made. Futari de iyou. Kimi ni shi ka mienai. Nanika wo mitsumeru kimi ga kirai da. Mitoreteiru ka no you na koi suru you na. Sonna kao ga kirai da. Shinjitetai kedo shinjirenai koto. Sonna no dou shitatte kitto. Kore kara datte ikutsumo atte. Sono tanbi okotte naiteku no. Soredemo kitto itsuka wa kitto bokura wa kitto. Wakariaeru sa shinjiteru yo. Mou iya datte tsukaretan datte. Gamushara ni sashinobeta boku no te wo furiharau kimi. Mou iya datte tsukareta yo nante. Hontou wa boku mo iitain da. Hora mata chikkutakku to. Naru sekai de nando datte sa. Kimi no tame ni youi shita kotoba doremo todokanai. “Owari ni shitai” da nante sa. Tsurarete kotoba ni shita toki. Kimi wa hajimete waratta. Sawagashii hibi ni waraenakunatteita. Boku no me ni utsuru kimi wa kirei da. Akenai yoru ni koboreta namida mo. Kimi no egao ni toketeku. Kawaranai hibi ni naiteia boku wo. Kimi wa yasashiku owari e to sasou. Shizumu you ni tokete yuku you ni. Shimitsuita kiri ga hareru. Wasurete shimaitakute tojikometa hibi ni. Sashinobete kureta kimi no te wo toru. Suzushii kaze ga sora wo oyogu you ni ima fukinukete yuku. Tsunaida te wo hanasanaide yo. Futari ima, yoru ni kakedashiteku</p>
+            </div>
+            
+            <div class="column right">
+                <h3>giới thiệu</h3>
+                <p>Yoru ni Kakeru là sản phẩm đầu tiên của YOASOBI trong hành trình "tạo ra âm nhạc từ những tiểu thuyết". Lời và nhạc của ca khúc này được sáng tác dựa trên tiểu thuyết Cám dỗ của Thần Chết (タナトスの誘惑 - Thanatos no Yūwaku) của tác giả Hoshino Mayo đăng tải trên trang web chuyên tiểu thuyết Monogatary.com[1]</p>
+                <p>Theo lời của Ayase: "Đây là ca khúc đầu tiên của YOASOBI để ra mắt thính giả, và cũng là sản phẩm của chúng tôi trong việc cố gắng làm nhạc từ những tiểu thuyết." Ngoài ra, bài hát này mất 3 tháng để hoàn thiện sản xuất, với khoảng 20 - 30 bản mẫu,[2][3]tuy nhiên không tốn quá nhiều chi phí để sản xuất mà laị trở thành một bản hit, vẫn theo lời của Ayase: "Việc sản xuất đĩa đơn "Yoru ni Kakeru" không hề tiêu tốn một Yên nào. Tôi có một người bạn có thể chơi guitar cho tôi trong một quán Karaoke ở Takadanobaba, nếu tính cả điều đó thì toàn bộ chi phí là 3 ngàn Yên"[3][4]</p>
+            </div>
+        </div>
+
+        <!-- Feature -->
+        <p>ngoài ra khá giống với column là layout Feature: những khối văn bản nhỏ: <br/>
+            thường dùng trong việc thể hiện các tính năng nổi bật, liệt kê ...
+        </p>
+
+        <div class="feature-layout">
+            <div class="feature-item">
+                <p>herrscher of truth</p>
+            </div>
+
+            <div class="feature-item">
+                <p>herrscher of thunrder</p>
+            </div>
+
+            <div class="feature-item">
+                <p>Herrscher of Flamescion</p>
+            </div>
+        </div>
+    
+        
+        <!-- center -->
+        <p>thêm vào đó thì có layout center với một thứ gì đó nằm ở chính giữa 1 khung</p>
+
+        <div class="center-layout">
+            <div class="center-item"></div>
+        </div>
+
+
+        <!-- chart (lượt đồ) -->
+        <p>tiếp theo là layout chart là kiểu lượt đồ:</p>
+        <div class="chart-layout">
+            <div class="chart-item" style="--percent: 10%">10%</div>
+            <div class="chart-item" style="--percent: 20%">20%</div>
+            <div class="chart-item" style="--percent: 30%">30%</div>
+            <div class="chart-item" style="--percent: 50%">50%</div>
+            <div class="chart-item" style="--percent: 70%">70%</div>
+            <div class="chart-item" style="--percent: 40%">40%</div>
+            <div class="chart-item" style="--percent: 90%">90%</div>
+            <div class="chart-item" style="--percent: 80%">80%</div>
+            <div class="chart-item" style="--percent: 30%">30%</div>
+            <div class="chart-item" style="--percent: 20%">20%</div>
+            <div class="chart-item" style="--percent: 30%">30%</div>
+            <div class="chart-item" style="--percent: 50%">50%</div>
+            <div class="chart-item" style="--percent: 30%">30%</div>
+            <div class="chart-item" style="--percent: 50%">50%</div>
+        </div>
+
+
+        <!-- column advanced  -->
+        <p> column advanced layout wèo nhìn thì giống cột văn bản nhưng lạ lắm ko biết tên là gì</p>
+
+        <div class="column-advanced-layout">
+            <div class="column-advanced-item-left">
+                <h3> <a href="https://www.youtube.com/watch?v=8iuLXODzL04">Tabun</a> </h3>
+                <p>Namida nagasu koto sura nai mama. Sugoshita hibi no ato hitotsu mo nokosazu ni. Sayonara da. Hitori de mukaeta asa ni. Narihibiku dareka no oto. Futari de sugoshita heya de. Me wo tojita mama kangaeteta. Warui no wa dare da. Wakannai yo. Dare no sei demo nai. Tabun. Bokura wa nankai datte kitto. Sou nannen datte kitto. Sayonara to tomo ni owaru dake nan da. Shikata ga nai yo kitto. "Okaeri". Omowazu koboreta kotoba wa. Chigau na. Hitori de mukaeta asa ni. Futo omou dareka no koto. Futari de sugoshita hibi no. Atarimae ga mada nokotteiru. Warui no wa kimi da. Sou dakke. Warui no wa boku da. Tabun. Kore mo taishuuteki renai desho. Sore wa saishuuteki na kotae da yo. Bokura dandan to zurete itta no. Sore mo tada yoku arukiki nareta sutoorii da. Anna ni kagayaiteita hibi ni sura. Hokori wa tsumotte ikun da. Bokura wa nankai datte kitto. Sou nannen datte kitto. Sayonara ni tsuzuku michi wo arukun da. Shikata ga nai yo kitto. "Okaeri". Itsumo no you ni. Koboreochita. Wakariaenai koto nante sa. Ikura demo arun da kitto. Subete wo yurushiaeru wake janai kara. Tada, yasashisa no hibi wo. Tsurai hibi to kanjite shimatta no nara. Modorenai kara. Bokura wa nankai datte kitto. Bokura wa nankai datte kitto. Sou nannen datte kitto. Sayonara to tomo ni owaru dake nan da. Shikata ga nai o kitto. "Okaeri". Omowazu koboreta kotoba wa. Chigau na. Sore demo nankai datte kitto. Sou nannen datte kitto. Hajimari ni modoru koto ga dekita nara. Nante, omotte shimau yo. "Okaeri". Todokazu koboreta kotoba ni. Waratta. Sukoshi hieta asa da.</p>
+            </div>
+
+            <div class="column-advanced-item-right">
+                <div class="item-right">
+                    <h3><a href="https://www.youtube.com/watch?v=8RIAw0bZGds">Tsubame</a>  </h3>
+                    <p>Kirameku minamo no ue wo. Muchuu de kazakiri kakeru. Tsubasa wo hatamekasete. Ano machi e yukou. Umi wo koete. Boku wa sou chiisa na tsubame. Tadoritsuita machi de fureta. Tanoshisou na hito no koe. Kanashimi ni kureru nakama no koe. Minna sorezore chigau kurashi no katachi. Mamoritakute kidzukanai uchi ni. Kizutsukeatte shimau no wa naze. Onaji sora no shita de. Bokura wa irotoridori no inochi to. Kono basho de tomo ni ikite iru. Sorezore hito mo kusaki mo hana mo tori mo. Kata yoseainagara. Bokura wa motomeru mono mo. Egaiteru mirai mo chigau keredo. Te to te wo toriaeta nara. Kitto waraiaeru hi ga kuru kara. Boku ni wa ima nani ga dekiru kana. Dareka ga te ni ireta yutakasa no ura de. Kaeru basho wo ubawareta nakama. Hontou wa kare mo yorisoiatte. Ikite itai dake na no ni. Kanashii kimochi ni nomikomarete. Kokoro ga kuroku somarikaketemo. Yurusu koto de mitomeru koto de. Bokura wa tsunagariaeru. Bokura ni ima dekiru koto. Sore dake de subete ga kawaranakutatte. Dareka no ichinichi ni hora. Sukoshi dake aza aka na irodori wo. Kagayaku houseki da toka. Kimpaku de wa nai keredo. Konna fuu ni sekaijuu ga. Sasayaka na ai de afureta nara. Nanika ga hora kawaru hazu sa. Onaji sora no shita itsuka kitto. Sore ga chiisa na boku no ooki na yume.</p>
+                </div>
+    
+                <div class="item-right">
+                    <h3> <a href="https://www.youtube.com/watch?v=qb71yxMDEhw">Haruka</a> </h3>
+                    <p>omoidasu no wa deatta hi no koto. dare no moto ni mo kaerenai boku wo. mitsukedashite kureta. sukuidashite kureta. wasureru koto nai kimi no egao. kurashi no sukima. yofuke no inori. itsu demo kimi to tomo ni aruite kita kiseki. tsurai koto mo. ureshii koto mo. wakachiaeru sonna hibi yo. furikaereba kazoekirenai. omoide ga afuredashite kuru. dare ni mo mienai tokoro de. ganbatteru. kimi no soba ni irareru koto sore dake de. konna ni hora shiawase nan da yo. komiagete kuru omoi wa tada . arigatou. otozureta yorokobi no haru wa. tabidachi no kisetsu. hanareta machi ni mo tsuredashite kureta ne. hitori fuan na hibi ni. samishisou na kimi ni. okuru eeru boku ga tsuiteru yo. tanoshii koto bakari janai nichijou ni. afuredashita kimi no namidasore demo. mae wo muite aruite. sou yatte otona ni natteku. kimi no soba ni irareru koto. kimi no yorokobi wa boku no yorokobi de. kimi no taisetsu ga shiawase ga. itsu made mo kimi to arimasu you ni. nee, kimi no soba ni wa mou. takusan no ai ga afureteru. dakara ima wa douka . akanaide. ano hi no you ni egao de. furikaereba ikutsu mono. omoide ga yomigaette kuru. dare ni mo mienai tokoro de. nagashita namida mo hora. ima no kimi ni tsunagatteru. takusan no ai ni tsunagatteru. komiagete kuru omoi wa tada. arigatou. itsu made mo shiawase de. itsu made mo aishiteru yo.</p>
+                </div>
+            </div>
+
+            
+        </div>
+
+    </body>
+</html>
